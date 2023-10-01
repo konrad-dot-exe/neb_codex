@@ -57,7 +57,7 @@ header{
   justify-content: center;
   min-width: 320px;
   min-height: 5vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
   /*outline: 1px dashed red;*/
   background-color: rgb(0, 100, 45);
   background: linear-gradient(rgba(4, 82, 34, 0.7), rgba(21, 31, 28, 0.781)), url("assets/cyber-tex-1.png");
@@ -172,7 +172,7 @@ header{
 .enemy-name {
   display: flex;
   flex-direction: column;
-  justify-content: top;
+
   text-align: left;
   grid-column-start: 4;
   grid-column-end: 7;
@@ -184,7 +184,7 @@ header{
 .guitar-name {
   display: flex;
   flex-direction: column;
-  justify-content: top;
+
   text-align: left;
   grid-column-start: 5;
   grid-column-end: 7;
@@ -196,7 +196,6 @@ header{
 .enemy-stat {
   display: flex;
   flex-direction: column;
-  justify-content: top;
   text-align: left;
   margin: .5rem;
 }
@@ -256,28 +255,31 @@ scroll-margin-top: 12rem;
 
 /* WORLDMAP */
 
-.img-zoom-container {
-  position: relative;
-  width:100%;
+.map-container{
+margin:auto;
+display:flex;
 }
 
-.img-zoom-lens {
+.img-magnifier-container {
+  transition: opacity 0.5s;
+  position:relative;
+  margin:auto;
+  display:flex;
+}
+
+.img-magnifier-glass {
+  transition: opacity 0.5s;
   position: absolute;
-  /*border: 1px solid #d4d4d4;*/
-  /*set the size of the lens:*/
-  width: 80px;
-  height: 80px;
-  /*border-radius:100%;*/
-}
-
-.img-zoom-result {
-  z-index:4;
-  position:absolute;
-  border: 1px solid #d4d4d4;
-  border-radius:100%;
-  /*set the size of the result div:*/
+  /*border: 1px solid #000;*/
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
   width: 400px;
   height: 400px;
+  transform: translateZ(0);
+  will-change: transform;
+  opacity:0%;
+
 }
 
 

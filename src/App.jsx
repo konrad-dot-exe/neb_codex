@@ -10,56 +10,70 @@ import { guitarData } from './data'
 import { maskData } from './data'
 import { pickupData } from './data'
 
-import worldMap from './assets/Worldmap.jpg'
+import worldmap from './assets/Worldmap.jpg'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  function imageZoom(imgID, resultID) {
-    var img, lens, result, cx, cy;
+  function magnify(imgID, zoom) {
+    var img, glass, w, h, bw;
     img = document.getElementById(imgID);
-    result = document.getElementById(resultID);
-    /*create lens:*/
-    lens = document.createElement("DIV");
-    lens.setAttribute("class", "img-zoom-lens");
-    /*insert lens:*/
-    img.parentElement.insertBefore(lens, img);
-    /*calculate the ratio between result DIV and lens:*/
-    cx = result.offsetWidth / lens.offsetWidth;
-    cy = result.offsetHeight / lens.offsetHeight;
-    /*set background properties for the result DIV:*/
-    result.style.backgroundImage = "url('" + img.src + "')";
-    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-    /*execute a function when someone moves the cursor over the image, or the lens:*/
-    lens.addEventListener("mousemove", moveLens);
-    img.addEventListener("mousemove", moveLens);
+    /*create magnifier glass:*/
+    glass = document.createElement("DIV");
+    glass.setAttribute("class", "img-magnifier-glass");
+    /*insert magnifier glass:*/
+    img.parentElement.insertBefore(glass, img);
+    /*set background properties for the magnifier glass:*/
+    glass.style.backgroundImage = "url('" + img.src + "')";
+    glass.style.backgroundRepeat = "no-repeat";
+    glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+    glass.style.opacity = "10%";
+    w = glass.offsetWidth / 2;
+    h = glass.offsetHeight / 2;
+
+    var imgContainer = document.getElementById('imgContainer');
+    
+    if (imgContainer) {
+        imgContainer.addEventListener('mouseenter', function() {
+            glass.style.opacity = "100%";
+        });
+
+        imgContainer.addEventListener('mouseleave', function() {
+            glass.style.opacity = "0%";
+        });
+
+        // ... rest of your code that depends on the DOM
+    } else {
+        console.error('imgContainer not found');
+    }
+
+ 
+  
+
+    /*execute a function when someone moves the magnifier glass over the image:*/
+    glass.addEventListener("mousemove", moveMagnifier);
+    img.addEventListener("mousemove", moveMagnifier);
     /*and also for touch screens:*/
-    lens.addEventListener("touchmove", moveLens);
-    img.addEventListener("touchmove", moveLens);
-    function moveLens(e) {
+    glass.addEventListener("touchmove", moveMagnifier);
+    img.addEventListener("touchmove", moveMagnifier);
+    function moveMagnifier(e) {
       var pos, x, y;
-      /*prevent any other actions that may occur when moving over the image:*/
+      /*prevent any other actions that may occur when moving over the image*/
       e.preventDefault();
       /*get the cursor's x and y positions:*/
       pos = getCursorPos(e);
-      /*calculate the position of the lens:*/
-      x = pos.x - (lens.offsetWidth / 2);
-      y = pos.y - (lens.offsetHeight / 2);
-      /*prevent the lens from being positioned outside the image:*/
-      if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
-      if (x < 0) {x = 0;}
-      if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
-      if (y < 0) {y = 0;}
-      /*set the position of the lens:*/
-      lens.style.left = x + "px";
-      lens.style.top = y + "px";
-      /*display what the lens "sees":*/
-      result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
-      
-      /*make the result follow the cursor*/
-      result.style.top = (pos.y + 32) + "px";
-      result.style.left = (pos.x + 32) + "px";
-
+      x = pos.x;
+      y = pos.y;
+      /*prevent the magnifier glass from being positioned outside the image:*/
+      if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+      if (x < w / zoom) {x = w / zoom;}
+      if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+      if (y < h / zoom) {y = h / zoom;}
+      /*set the position of the magnifier glass:*/
+      glass.style.left = (x - w) + "px";
+      glass.style.top = (y - h) + "px";
+      /*display what the magnifier glass "sees":*/
+      glass.style.backgroundPosition = "-" + ((x * zoom) - w) + "px -" + ((y * zoom) - h) + "px";
     }
     function getCursorPos(e) {
       var a, x = 0, y = 0;
@@ -74,20 +88,17 @@ function App() {
       y = y - window.pageYOffset;
       return {x : x, y : y};
     }
+
+
+
   }
 
-    useEffect(() => {
-    imageZoom('myimage', 'myresult');
-    updatePosition;
+  
+
+  useEffect(() => {
+    magnify("myimage", 3);
   }, []);  // The empty array means this useEffect runs once after initial render
-
-
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const updatePosition = (e) => {
-    setPosition({ x: e.clientX, y: e.clientY });
-  };
-
+  
 
   return (
     <>
@@ -240,14 +251,13 @@ function App() {
 
        </div>
 
-       <div className="section-header" id="pickups"><h1>WORLD MAP</h1></div>
+       <div className="section-header" id="worldmap"><h1>WORLD MAP</h1></div>
 
        <div className="map-container">
 
-      <div className="img-zoom-container">
-        <div><img id="myimage" className="map_image" src={worldMap} width="100%" /></div>
-        <div  id="myresult" className="img-zoom-result"></div>
-      </div> 
+       <div className="img-magnifier-container" id="imgContainer">
+        <img id="myimage" src={worldmap} width="100%"/>
+      </div>
 
        </div>
 
@@ -257,5 +267,7 @@ function App() {
 
 
 }
+
+
 
 export default App
