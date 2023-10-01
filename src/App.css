@@ -8,6 +8,7 @@
 }
 
 .black-rect{
+z-index: 2;
 position: fixed;
 height: 18vh;
 background-color:rgb(0, 0, 0);
@@ -18,6 +19,7 @@ top: 0;
 }
 
 header{
+  z-index: 3;
   display: flex;
   position: fixed;
   top: 0;
@@ -41,6 +43,7 @@ header{
 }
 
 .top-nav{
+  z-index: 3;
   display: flex;
   position: fixed;
   top: 12vh;
@@ -138,10 +141,6 @@ header{
   padding:0.25rem;
 }
 
-.enemy-card div{
- /*outline: 1px dashed rgb(0, 225, 255); */
-}
-
 .enemy-image {
   margin: 0.5rem;
   grid-column-start: 1;
@@ -229,6 +228,16 @@ header{
   grid-column-start: 9;
 }
 
+.map-container{
+  min-width: 320px;
+  min-height: 6vh; 
+}
+
+.map{
+  width: 100%;
+}
+
+
 #enemies{
 scroll-margin-top: 40rem;
 }
@@ -244,3 +253,33 @@ scroll-margin-top: 12rem;
 #pickups{
 scroll-margin-top: 12rem;
 }
+
+/* WORLDMAP */
+
+.img-zoom-container {
+  position: relative;
+  width:100%;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  /*border: 1px solid #d4d4d4;*/
+  /*set the size of the lens:*/
+  width: 80px;
+  height: 80px;
+  /*border-radius:100%;*/
+}
+
+.img-zoom-result {
+  z-index:4;
+  position:absolute;
+  border: 1px solid #d4d4d4;
+  border-radius:100%;
+  /*set the size of the result div:*/
+  width: 400px;
+  height: 400px;
+}
+
+
+
+
