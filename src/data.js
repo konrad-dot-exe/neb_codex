@@ -22,22 +22,22 @@ import executor from './assets/executor.png'
 
 // GUITARS
 
-import guitar_rapid from './assets/guitar_rapid.png'
+import guitar_rapid from './assets/Guitar_Rapid.png'
 import bullet_rapid from './assets/bullet_rapid.png'
 
-import guitar_spread from './assets/guitar_spread.png'
+import guitar_spread from './assets/Guitar_Spread.png'
 import bullet_spread from './assets/bullet_spread.png'
 
-import guitar_sonic from './assets/guitar_sonic.png'
+import guitar_sonic from './assets/Guitar_Sonic.png'
 import bullet_sonic from './assets/bullet_sonic.png'
 
-import guitar_helix from './assets/guitar_helix.png'
+import guitar_helix from './assets/Guitar_Helix.png'
 import bullet_helix from './assets/bullet_helix.png'
 
-import guitar_electro from './assets/guitar_electro.png'
+import guitar_electro from './assets/Guitar_Electro.png'
 import bullet_electro from './assets/bullet_electro.png'
 
-import guitar_laser from './assets/guitar_laser.png'
+import guitar_laser from './assets/Guitar_Laser.png'
 import bullet_laser from './assets/bullet_laser.png'
 
 // MASKS
@@ -111,7 +111,7 @@ desc: "Standard-issue rapid-fire guitar. It fires your default bullets at a quic
 { id: 2, image: guitar_spread, bulletImage: bullet_spread, name: "SPREAD", dmg: "1x3", rate: "2", ammo: "20", 
 desc: "A favorite guitar of people who don’t like aiming, it fires three default bullets at once in a spread formation. "},
 { id: 3, image: guitar_sonic, bulletImage: bullet_sonic, name: "SONIC", dmg: "2", rate: "2", ammo: "16", 
-desc: "Fires a wave of slow moving bullets that can blast through groups of smaller enemies. Sonic bullets lose power the further they travel."},
+desc: "Fires a wave of large slow moving bullets that can blast through groups of smaller enemies. Sonic bullets lose power the further they travel."},
 { id: 4, image: guitar_helix, bulletImage: bullet_helix, name: "HELIX", dmg: "2*", rate: "2", ammo: "16", 
 desc: "Launches a fast moving bullet orbited by two smaller bullets. * Orbiter bullets do an additional 1 damage each."},
 { id: 5, image: guitar_electro, bulletImage: bullet_electro, name: "ELECTRO", dmg: "3*", rate: "1.5", ammo: "12", 
