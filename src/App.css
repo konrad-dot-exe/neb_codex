@@ -42,6 +42,49 @@ header{
   border-radius: var(--border_radius);
 }
 
+.map-infocard{
+  color: white;
+  z-index: 3;
+  display: flex;
+  position: fixed;
+  top: 18vh;
+  left: 0;
+  right: 0;
+  width: 25%;
+  margin: 8px;
+  place-items:center;
+  min-width: 320px;
+  min-height: 12vh;
+  flex-direction:column;
+  background-color: rgb(0, 100, 45);
+  background: linear-gradient(rgba(4, 82, 34, 0.7), rgba(21, 31, 28, 0.781)), url("assets/cyber-tex-1.png");
+  background-repeat: repeat;
+  border-radius: var(--border_radius);
+  opacity: 0%;
+  transition:0.6s all;
+}
+
+.infocard-image{
+  width: 100%;
+  padding: 5%;
+  padding-top:0%;
+  padding-bottom:0%;
+  border-radius: var(--border_radius);
+}
+
+.infocard-description{
+  background-color: var(--clr-dark-green);
+  margin: 1rem;
+  margin-top: 0%;
+  border-radius: var(--border_radius);
+  padding:0.25rem;
+  padding-top:0%;
+}
+
+.hard{
+  color:red;
+}
+
 .top-nav{
   z-index: 3;
   display: flex;
@@ -253,11 +296,17 @@ scroll-margin-top: 12rem;
 scroll-margin-top: 12rem;
 }
 
+#worldmap{
+scroll-margin-top: 12rem;
+}
+
 /* WORLDMAP */
 
 .map-container{
-margin:auto;
-display:flex;
+  margin:auto;
+  display:flex;
+  position: relative;
+  min-width: 800px;
 }
 
 .img-magnifier-container {
@@ -279,6 +328,34 @@ display:flex;
   transform: translateZ(0);
   will-change: transform;
   opacity:0%;
+}
+
+.map-marker{
+  position: absolute;
+  border-radius: 50%;
+  /*outline: 1px dashed aqua; */
+  z-index: 5;
+  width: 3%;
+  height: 3%;
+  transition: 0.6s;
+  display:flex;
+  justify-content: center;
+  opacity: 0%;
+}
+
+.map-marker h4{
+  color: white;
+  font-size: 1vw;
+  position: absolute;
+  top:-300%;
+  text-align: center;
+  text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+  pointer-events: none;
+}
+
+.large h4{
+  top:-400%;
+
 
 }
 

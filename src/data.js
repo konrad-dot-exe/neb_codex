@@ -60,6 +60,95 @@ import extra_continue from './assets/continue.png'
 import mana_recharge from './assets/infinite_mana.png'
 import double_guitar from './assets/double_guitar.png'
 
+// WORLDMAP
+
+import screenshot from './assets/screenshot.png'
+import screenshot2 from './assets/screenshot2.png'
+import screenshot3 from './assets/screenshot3.png'
+
+export const markersData = [
+  {
+    id: 'shredonia',
+    name: 'SHREDONIA',
+    left: '37.75%',
+    top: '11.75%',
+    size: 'large',
+    image: screenshot,
+    leveldifficulty: 'HARD',
+    leveldesc: 'This level is super hard and you will die over and over again. You should just not even try.',
+    additionalData: '...',
+    
+  },
+
+  {
+    id: 'warpgate-yellow',
+    name: 'YELLOW WARPGATE',
+    left: '31.75%',
+    top: '12%',
+    size: '',
+    image: screenshot2,
+    leveldifficulty: 'N/A',
+    leveldesc: 'This warpgate leads to the eastern edge of Cyber Zone.',
+    additionalData: '...',
+    
+  },
+
+  {
+    id: 'shrine-chrono',
+    name: 'CHRONO SHRINE',
+    left: '43.75%',
+    top: '12%',
+    size: '',
+    image: screenshot3,
+    leveldifficulty: 'N/A',
+    leveldesc: 'This shrine unlocks the Chrono Mask, granting you time warping powers.',
+    additionalData: '...',
+    
+  },
+
+  {
+    id: 'astroid-void-1',
+    name: 'METEOR VOID',
+    left: '37.75%',
+    top: '20%',
+    size: '',
+    image: screenshot,
+    leveldifficulty: 'MEDIUM',
+    leveldesc: `There are gnarly meteor showers in this void. Sometimes it's best to just dodge meteors because they break into fragments when destroyed.`,
+    additionalData: '...',
+    
+  },
+
+   {
+    id: 'fluvious-falls',
+    name: 'FLUVIOUS FALLS',
+    left: '41.5%',
+    top: '35%',
+    size: 'large',
+    image: screenshot,
+    leveldifficulty: 'MEDIUM',
+    leveldesc: `There are lots of Explodos and Sentires here, so you may want to shoot strategically rather than going in guns blazing.`,
+    additionalData: '...',
+    
+  },
+
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ENEMIES
 
 export const enemyData = [

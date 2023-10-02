@@ -11,6 +11,10 @@ import { maskData } from './data'
 import { pickupData } from './data'
 
 import worldmap from './assets/Worldmap.jpg'
+import screenshot from './assets/screenshot.png'
+
+import {markersData} from './data'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -46,9 +50,6 @@ function App() {
     } else {
         console.error('imgContainer not found');
     }
-
- 
-  
 
     /*execute a function when someone moves the magnifier glass over the image:*/
     glass.addEventListener("mousemove", moveMagnifier);
@@ -88,17 +89,73 @@ function App() {
       y = y - window.pageYOffset;
       return {x : x, y : y};
     }
-
-
-
   }
 
-  
+  //useEffect(() => {
+  //  magnify("myimage", 3);
+  //}, []);  // The empty array means this useEffect runs once after initial render
 
-  useEffect(() => {
-    magnify("myimage", 3);
-  }, []);  // The empty array means this useEffect runs once after initial render
+  window.onload = (event) => {
+    
+    function setMarker(marker){
+    
+      var infocard = document.getElementById("map-infocard");
+      var infocardName = document.getElementById("infocard-name");
+      var infocardDesc = document.getElementById("infocard-description");
+      var infocardDifficulty = document.getElementById("infocard-difficulty");
+      var infocardImage = document.getElementById("infocard-image");
+
+
+      marker.addEventListener('mouseenter', function() {
+          marker.style.opacity = "100%";
+          infocard.style.opacity = "100%";
+          
+          console.log(infocardImage.src);
+
+          let levelName = marker.getAttribute('levelname');
+          let levelDesc = marker.getAttribute('leveldesc');
+          let levelDifficulty = marker.getAttribute('leveldifficulty');
+          let levelImage = marker.getAttribute('image');
+          
+          infocardName.textContent = levelName;
+          infocardDesc.textContent = levelDesc;
+          infocardDifficulty.textContent = "Difficulty: " + levelDifficulty;
+          infocardImage.src = levelImage;
+          
+      });
+
+      marker.addEventListener('mouseleave', function() {
+          marker.style.opacity = "0%";
+          infocard.style.opacity = "0%";
+      });
+
+    }
+
+  var shredonia = document.getElementById('shredonia');
+  var warpgateYellow = document.getElementById('warpgate-yellow');
+  var shrineChrono = document.getElementById('shrine-chrono');
   
+  var astroidVoid1 = document.getElementById('astroid-void-1');
+  
+  var fluviousFalls = document.getElementById('fluvious-falls');
+  //var blokoCavern = document.getElementById('bloko-cavern');
+  //var sawtoothCave = document.getElementById('sawtooth-cave');
+  //var guitarShrineBlue = document.getElementById('guitar-shrine-blue');
+  //var warpgateBlue = document.getElementById('warpgate-blue');
+
+  setMarker(shredonia);
+  setMarker(warpgateYellow);
+  setMarker(shrineChrono);
+
+  setMarker(astroidVoid1);
+  
+  setMarker(fluviousFalls);
+  //setMarker(blokoCavern);
+  //setMarker(sawtoothCave);
+  //setMarker(guitarShrineBlue);
+  //setMarker(warpgateBlue);
+  
+};
 
   return (
     <>
@@ -253,11 +310,46 @@ function App() {
 
        <div className="section-header" id="worldmap"><h1>WORLD MAP</h1></div>
 
+       <div className="map-infocard" id="map-infocard">
+        <h2 id="infocard-name">SHREDONIA</h2>
+        <img  src={screenshot} className="infocard-image" id="infocard-image"/>
+        <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
+        <div className="infocard-description" ><p id="infocard-description"> This level is a totally mysterious enigma.</p></div>
+
+      </div>
+
        <div className="map-container">
 
-       <div className="img-magnifier-container" id="imgContainer">
-        <img id="myimage" src={worldmap} width="100%"/>
-      </div>
+        <div className="img-magnifier-container" id="imgContainer">
+          <img id="myimage" src={worldmap} width="100%"/>
+        </div>
+
+    
+        {markersData.map(marker => (
+          <div 
+            key={marker.id}
+            className={`map-marker ${marker.size}`} 
+            id={marker.id} 
+            levelname={marker.name} 
+            style={{ left: marker.left, top: marker.top }}
+            image= {marker.image}
+            leveldifficulty = {marker.leveldifficulty}
+            leveldesc = {marker.leveldesc}
+          >
+            <h4>{marker.name}</h4>
+            {/*... additional elements or attributes can be added based on the data in each marker object*/}
+          </div>
+        ))}
+
+        {/*
+
+       <div className="map-marker large" id="fluvious-falls" style={{left: 40.5 + '%', top: 31 + '%'}} > <h4> FLUVIOUS FALLS </h4> </div>
+       <div className="map-marker large" id="bloko-cavern" style={{left: 47.25 + '%', top: 36 + '%'}} > <h4> BLOKO CAVERN </h4> </div>
+       <div className="map-marker large" id="sawtooth-cave" style={{left: 55.25 + '%', top: 26.5 + '%'}} > <h4> SAWTOOTH CAVE </h4> </div>
+       <div className="map-marker" id="warpgate-blue" style={{left: 45.5 + '%', top: 26.5 + '%'}} > <h4> BLUE WARPGATE </h4> </div>
+       <div className="map-marker" id="guitar-shrine-blue" style={{left: 51.5 + '%', top: 25.75 + '%'}} > <h4> BLUE GUITAR </h4> </div>
+
+       */}
 
        </div>
 
