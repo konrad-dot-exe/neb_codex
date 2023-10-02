@@ -63,8 +63,12 @@ import double_guitar from './assets/double_guitar.png'
 // WORLDMAP
 
 import screenshot from './assets/screenshot.png'
-import screenshot2 from './assets/screenshot2.png'
-import screenshot3 from './assets/screenshot3.png'
+import shredonia from './assets/screenshots/shredonia.png'
+import meteorvoid from './assets/screenshots/meteor_void_1.png'
+import fluviousA from './assets/screenshots/fluvious-falls-a.png'
+import shrineChrono from './assets/screenshots/shrine-chrono.png'
+import warpgateYellow from './assets/screenshots/warpgate-yellow.png'
+import blokoCavern from './assets/screenshots/bloko_cavern.png'
 
 export const markersData = [
   {
@@ -73,9 +77,9 @@ export const markersData = [
     left: '37.75%',
     top: '11.75%',
     size: 'large',
-    image: screenshot,
+    image: shredonia,
     leveldifficulty: 'HARD',
-    leveldesc: 'This level is super hard and you will die over and over again. You should just not even try.',
+    leveldesc: 'This is a fast level with a focus on dodging obstacles such as spikes which shoot off the walls.',
     additionalData: '...',
     
   },
@@ -86,9 +90,9 @@ export const markersData = [
     left: '31.75%',
     top: '12%',
     size: '',
-    image: screenshot2,
+    image: warpgateYellow,
     leveldifficulty: 'N/A',
-    leveldesc: 'This warpgate leads to the eastern edge of Cyber Zone.',
+    leveldesc: 'This warpgate leads to the eastern edge of Cyber Zone where you will find the Cyan Guitar.',
     additionalData: '...',
     
   },
@@ -99,7 +103,7 @@ export const markersData = [
     left: '43.75%',
     top: '12%',
     size: '',
-    image: screenshot3,
+    image: shrineChrono,
     leveldifficulty: 'N/A',
     leveldesc: 'This shrine unlocks the Chrono Mask, granting you time warping powers.',
     additionalData: '...',
@@ -112,7 +116,7 @@ export const markersData = [
     left: '37.75%',
     top: '20%',
     size: '',
-    image: screenshot,
+    image: meteorvoid,
     leveldifficulty: 'MEDIUM',
     leveldesc: `There are gnarly meteor showers in this void. Sometimes it's best to just dodge meteors because they break into fragments when destroyed.`,
     additionalData: '...',
@@ -125,12 +129,26 @@ export const markersData = [
     left: '41.5%',
     top: '35%',
     size: 'large',
-    image: screenshot,
+    image: fluviousA,
     leveldifficulty: 'MEDIUM',
-    leveldesc: `There are lots of Explodos and Sentires here, so you may want to shoot strategically rather than going in guns blazing.`,
+    leveldesc: `There are lots of Explodos and Sentries here, so you may want to shoot strategically rather than going in guns blazing.`,
     additionalData: '...',
     
   },
+
+  {
+    id: 'bloko-cavern',
+    name: 'BLOKO CAVERN',
+    left: '48%',
+    top: '40%',
+    size: 'large',
+    image: blokoCavern,
+    leveldifficulty: 'MEDIUM',
+    leveldesc: `This is a large cavern to explore. Unlike most levels, this one actually scrolls vertically rather than wrapping on the edges of the screen.`,
+    additionalData: '...',
+    
+  },
+  
 
 ];
 

@@ -12,84 +12,12 @@ import { pickupData } from './data'
 
 import worldmap from './assets/Worldmap.jpg'
 import screenshot from './assets/screenshot.png'
+import wizzy from './assets/Wizzy3.gif'
 
 import {markersData} from './data'
 
-
 function App() {
   const [count, setCount] = useState(0)
-
-  function magnify(imgID, zoom) {
-    var img, glass, w, h, bw;
-    img = document.getElementById(imgID);
-    /*create magnifier glass:*/
-    glass = document.createElement("DIV");
-    glass.setAttribute("class", "img-magnifier-glass");
-    /*insert magnifier glass:*/
-    img.parentElement.insertBefore(glass, img);
-    /*set background properties for the magnifier glass:*/
-    glass.style.backgroundImage = "url('" + img.src + "')";
-    glass.style.backgroundRepeat = "no-repeat";
-    glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
-    glass.style.opacity = "10%";
-    w = glass.offsetWidth / 2;
-    h = glass.offsetHeight / 2;
-
-    var imgContainer = document.getElementById('imgContainer');
-    
-    if (imgContainer) {
-        imgContainer.addEventListener('mouseenter', function() {
-            glass.style.opacity = "100%";
-        });
-
-        imgContainer.addEventListener('mouseleave', function() {
-            glass.style.opacity = "0%";
-        });
-
-        // ... rest of your code that depends on the DOM
-    } else {
-        console.error('imgContainer not found');
-    }
-
-    /*execute a function when someone moves the magnifier glass over the image:*/
-    glass.addEventListener("mousemove", moveMagnifier);
-    img.addEventListener("mousemove", moveMagnifier);
-    /*and also for touch screens:*/
-    glass.addEventListener("touchmove", moveMagnifier);
-    img.addEventListener("touchmove", moveMagnifier);
-    function moveMagnifier(e) {
-      var pos, x, y;
-      /*prevent any other actions that may occur when moving over the image*/
-      e.preventDefault();
-      /*get the cursor's x and y positions:*/
-      pos = getCursorPos(e);
-      x = pos.x;
-      y = pos.y;
-      /*prevent the magnifier glass from being positioned outside the image:*/
-      if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-      if (x < w / zoom) {x = w / zoom;}
-      if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-      if (y < h / zoom) {y = h / zoom;}
-      /*set the position of the magnifier glass:*/
-      glass.style.left = (x - w) + "px";
-      glass.style.top = (y - h) + "px";
-      /*display what the magnifier glass "sees":*/
-      glass.style.backgroundPosition = "-" + ((x * zoom) - w) + "px -" + ((y * zoom) - h) + "px";
-    }
-    function getCursorPos(e) {
-      var a, x = 0, y = 0;
-      e = e || window.event;
-      /*get the x and y positions of the image:*/
-      a = img.getBoundingClientRect();
-      /*calculate the cursor's x and y coordinates, relative to the image:*/
-      x = e.pageX - a.left;
-      y = e.pageY - a.top;
-      /*consider any page scrolling:*/
-      x = x - window.pageXOffset;
-      y = y - window.pageYOffset;
-      return {x : x, y : y};
-    }
-  }
 
   //useEffect(() => {
   //  magnify("myimage", 3);
@@ -138,7 +66,7 @@ function App() {
   var astroidVoid1 = document.getElementById('astroid-void-1');
   
   var fluviousFalls = document.getElementById('fluvious-falls');
-  //var blokoCavern = document.getElementById('bloko-cavern');
+  var blokoCavern = document.getElementById('bloko-cavern');
   //var sawtoothCave = document.getElementById('sawtooth-cave');
   //var guitarShrineBlue = document.getElementById('guitar-shrine-blue');
   //var warpgateBlue = document.getElementById('warpgate-blue');
@@ -148,9 +76,9 @@ function App() {
   setMarker(shrineChrono);
 
   setMarker(astroidVoid1);
-  
+
   setMarker(fluviousFalls);
-  //setMarker(blokoCavern);
+  setMarker(blokoCavern);
   //setMarker(sawtoothCave);
   //setMarker(guitarShrineBlue);
   //setMarker(warpgateBlue);
@@ -167,6 +95,14 @@ function App() {
       </header>
 
         <Navbar/>
+
+      <div className="hero"> 
+      
+      <div className="hero-text-container" ><h2> Welcome to the <span className="hero-accent">Nebular Codex!</span> Here you can study all of the secrets of Nebular Crush and level up from noob-ular to nebular!</h2> </div>
+      <div className="hero-image-container"> <img className="wizzy-hero" src={wizzy}></img> </div>
+      
+      </div>
+
 
       <div className="section-header first" id="enemies"><h1>ENEMIES</h1></div>
 
@@ -311,7 +247,7 @@ function App() {
        <div className="section-header" id="worldmap"><h1>WORLD MAP</h1></div>
 
        <div className="map-infocard" id="map-infocard">
-        <h2 id="infocard-name">SHREDONIA</h2>
+        <h2 className="infocard-name" id="infocard-name">SHREDONIA</h2>
         <img  src={screenshot} className="infocard-image" id="infocard-image"/>
         <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
         <div className="infocard-description" ><p id="infocard-description"> This level is a totally mysterious enigma.</p></div>
@@ -343,8 +279,7 @@ function App() {
 
         {/*
 
-       <div className="map-marker large" id="fluvious-falls" style={{left: 40.5 + '%', top: 31 + '%'}} > <h4> FLUVIOUS FALLS </h4> </div>
-       <div className="map-marker large" id="bloko-cavern" style={{left: 47.25 + '%', top: 36 + '%'}} > <h4> BLOKO CAVERN </h4> </div>
+
        <div className="map-marker large" id="sawtooth-cave" style={{left: 55.25 + '%', top: 26.5 + '%'}} > <h4> SAWTOOTH CAVE </h4> </div>
        <div className="map-marker" id="warpgate-blue" style={{left: 45.5 + '%', top: 26.5 + '%'}} > <h4> BLUE WARPGATE </h4> </div>
        <div className="map-marker" id="guitar-shrine-blue" style={{left: 51.5 + '%', top: 25.75 + '%'}} > <h4> BLUE GUITAR </h4> </div>
