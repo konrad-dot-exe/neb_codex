@@ -49,7 +49,7 @@ import mask_paladin from './assets/mask_paladin.png'
 import mask_kahuna from './assets/mask_kahuna.png'
 import mask_demon from './assets/mask_demon.png'
 
-// PICKUPS
+// ITEMS
 
 import mana_packet from './assets/mana.png'
 import crush_rune from './assets/rune.png'
@@ -59,19 +59,64 @@ import mana_relic from './assets/mana_relic.png'
 import extra_continue from './assets/continue.png'
 import mana_recharge from './assets/infinite_mana.png'
 import double_guitar from './assets/double_guitar.png'
+import extra_HP from './assets/extra_hp.png'
+import cryptogem from './assets/cryptogem.png'
 
-// WORLDMAP
+// WORLDMAP SCREENSHOTS
 
 import noise from './assets/screenshots/noise.png'
 import shredonia from './assets/screenshots/shredonia.png'
 import meteorvoid from './assets/screenshots/meteor_void_1.png'
-import fluviousA from './assets/screenshots/fluvious-falls-a.png'
-import shrineChrono from './assets/screenshots/shrine-chrono.png'
-import warpgateYellow from './assets/screenshots/warpgate-yellow.png'
+
+import fluviousA from './assets/screenshots/fluvious_falls_a.png'
 import blokoCavern from './assets/screenshots/bloko_cavern.png'
 import gnarnia from './assets/screenshots/gnarnia.png'
-import warpgateBlue from './assets/screenshots/warpgate-blue.png'
-import guitarBlue from './assets/screenshots/guitar-blue.png'
+
+import warpgateYellow from './assets/screenshots/warpgate_yellow.png'
+import warpgatePurple from './assets/screenshots/warpgate_purple.png'
+import warpgateBlue from './assets/screenshots/warpgate_blue.png'
+import warpgateCyan from './assets/screenshots/warpgate_cyan.png'
+import warpgateGreenNebular from './assets/screenshots/warpgate_green_nebular.png'
+import warpgateGreenCyber from './assets/screenshots/warpgate_green_cyber.png'
+import warpgateOrange from './assets/screenshots/warpgate_orange.png'
+
+import guitarBlue from './assets/screenshots/guitar_blue.png'
+import guitarYellow from './assets/screenshots/guitar_yellow.png'
+import guitarGreen from './assets/screenshots/guitar_green.png'
+import guitarPurple from './assets/screenshots/guitar_purple.png'
+import guitarRed from './assets/screenshots/guitar_red.png'
+
+import shrineChrono from './assets/screenshots/shrine_chrono.png'
+import shrineMonkey from './assets/screenshots/shrine_monkey.png'
+import shrinePaladin from './assets/screenshots/shrine_paladin.png'
+import shrineDragon from './assets/screenshots/shrine_dragon.png'
+
+import blokopolis1 from './assets/screenshots/blokopolis_1.png'
+import blokopolis2 from './assets/screenshots/blokopolis_2.png'
+import blokopolis3 from './assets/screenshots/blokopolis_3.png'
+import blokoplex from './assets/screenshots/blokoplex.png'
+import blokohub from './assets/screenshots/blokohub_a.png'
+import auroraDigitalis from './assets/screenshots/aurora_digitalis.png'
+import fractopolis1 from './assets/screenshots/fractopolis_1.png'
+import fractopolis2 from './assets/screenshots/fractopolis_2.png'
+import fractoplex from './assets/screenshots/fractoplex.png'
+import nucleus from './assets/screenshots/nucleus.png'
+
+import buboidVoid from './assets/screenshots/buboid_void.png'
+import buboidCavern from './assets/screenshots/buboid_cavern.png'
+
+import krystalZone1 from './assets/screenshots/krystal_zone_1.png'
+import krystalZone2 from './assets/screenshots/krystal_zone_2.png'
+import krystalZone3 from './assets/screenshots/krystal_zone_3.png'
+import krystoplex from './assets/screenshots/krystoplex.png'
+import krysallix from './assets/screenshots/krysallix.png'
+
+import start from './assets/screenshots/start.png'
+import nebularVoid from './assets/screenshots/nebular_void.png'
+import digitemple1 from './assets/screenshots/digitemple_1.png'
+import digitemple2 from './assets/screenshots/digitemple_2.png'
+import digitemple3 from './assets/screenshots/digitemple_3.png'
+import blokoReef from './assets/screenshots/bloko_reef_b.png'
 
 export const markersData = [
   {
@@ -98,7 +143,7 @@ export const markersData = [
     size: '',
     image: warpgateYellow,
     leveldifficulty: 'N/A',
-    leveldesc: 'This warpgate leads to the eastern edge of Cyber Zone where you will find the Cyan Guitar.',
+    leveldesc: 'This warpgate leads to the eastern edge of CYBER ZONE where you will find the ELECTRO GUITAR.',
     additionalData: '...',
     
   },
@@ -111,7 +156,7 @@ export const markersData = [
     size: '',
     image: shrineChrono,
     leveldifficulty: 'N/A',
-    leveldesc: 'This shrine unlocks the Chrono Mask, granting you time warping powers.',
+    leveldesc: 'This shrine unlocks the CHRONO MASK, granting you time warping powers.',
     additionalData: '...',
   },
 
@@ -137,7 +182,7 @@ export const markersData = [
     size: 'large',
     image: fluviousA,
     leveldifficulty: 'MEDIUM',
-    leveldesc: `There are lots of Explodos and Sentries here, so you may want to shoot strategically rather than going in guns blazing.`,
+    leveldesc: `There are lots of EXPLODOS and SENTRIES here, so you may want to shoot strategically rather than going in guns blazing.`,
     additionalData: '...',
     
   },
@@ -174,7 +219,7 @@ export const markersData = [
     size: '',
     image: warpgateBlue,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to a weird area known as Flux Zone.`,
+    leveldesc: `This warpgate leads to a weird area known as FLUX ZONE.`,
     additionalData: '...',
   },
 
@@ -186,7 +231,7 @@ export const markersData = [
     size: '',
     image: guitarBlue,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the Helix Guitar.`,
+    leveldesc: `This shrine unlocks the HELIX GUITAR.`,
     additionalData: '...',
   },
 
@@ -198,7 +243,7 @@ export const markersData = [
     left: '53.5%',
     top: '69.5%',
     size: '',
-    image: noise,
+    image: digitemple1,
     leveldifficulty: 'EASY',
     leveldesc: `The first level in the game. Even a drunken one-armed monkey could beat this one.`,
     additionalData: '...',
@@ -210,7 +255,7 @@ export const markersData = [
     left: '48%',
     top: '69.5%',
     size: '',
-    image: noise,
+    image: digitemple2,
     leveldifficulty: 'EASY',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -222,9 +267,9 @@ export const markersData = [
     left: '51.75%',
     top: '59.5%',
     size: '',
-    image: noise,
+    image: digitemple3,
     leveldifficulty: 'EASY',
-    leveldesc: `The first level in the game. Even a drunken one-armed monkey could beat this one.`,
+    leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
   },
 
@@ -234,9 +279,9 @@ export const markersData = [
     left: '54.75%',
     top: '59.5%',
     size: '',
-    image: noise,
+    image: guitarYellow,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the Spread Guitar.`,
+    leveldesc: `This shrine unlocks the SPREAD GUITAR.`,
     additionalData: '...',
   },
 
@@ -246,7 +291,7 @@ export const markersData = [
     left: '41%',
     top: '66%',
     size: 'large',
-    image: noise,
+    image: blokoReef,
     leveldifficulty: 'EASY',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -258,7 +303,7 @@ export const markersData = [
     left: '48%',
     top: '56%',
     size: '',
-    image: noise,
+    image: nebularVoid,
     leveldifficulty: 'MED',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -270,9 +315,9 @@ export const markersData = [
     left: '37.25%',
     top: '64%',
     size: '',
-    image: noise,
+    image: shrineMonkey,
     leveldifficulty: 'N/A',
-    leveldesc: 'This shrine unlocks the Monkey Mask, granting you a savage boost to your speed.',
+    leveldesc: 'This shrine unlocks the MONKEY MASK, granting you a savage boost to your speed.',
     additionalData: '...',
   },
   
@@ -282,9 +327,21 @@ export const markersData = [
     left: '59.75%',
     top: '74%',
     size: '',
-    image: noise,
+    image: guitarRed,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the Rapid Guitar.`,
+    leveldesc: `This shrine unlocks the RAPID GUITAR.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'start',
+    name: 'START',
+    left: '57.25%',
+    top: '76%',
+    size: '',
+    image: start,
+    leveldifficulty: 'N/A',
+    leveldesc: `This is where you start the game.`,
     additionalData: '...',
   },
   
@@ -298,7 +355,7 @@ export const markersData = [
     size: 'large',
     image: noise,
     leveldifficulty: 'N/A',
-    leveldesc: `This gate will activate once you have collected the 5 cryptogems. Use it to transport to the final zone and beat the game!`,
+    leveldesc: `This gate will activate once you have collected the 5 CRYPTOGEMS. Use it to transport to the final zone and beat the game!`,
     additionalData: '...',
   }, 
 
@@ -308,9 +365,9 @@ export const markersData = [
     left: '36%',
     top: '75.5%',
     size: '',
-    image: noise,
+    image: shrineDragon,
     leveldifficulty: 'N/A',
-    leveldesc: 'This shrine unlocks the Dragon Mask which sprays nearby enemies with fire.',
+    leveldesc: 'This shrine unlocks the DRAGON MASK which sprays nearby enemies with fire.',
     additionalData: '...',
   },
   
@@ -322,7 +379,7 @@ export const markersData = [
     left: '33.75%',
     top: '50%',
     size: '',
-    image: noise,
+    image: blokopolis1,
     leveldifficulty: 'MED',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -334,7 +391,7 @@ export const markersData = [
     left: '30%',
     top: '52.5%',
     size: '',
-    image: noise,
+    image: blokohub,
     leveldifficulty: 'MED',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -346,7 +403,7 @@ export const markersData = [
     left: '24%',
     top: '52.5%',
     size: '',
-    image: noise,
+    image: blokopolis2,
     leveldifficulty: 'MED',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -358,7 +415,7 @@ export const markersData = [
     left: '18%',
     top: '52.5%',
     size: '',
-    image: noise,
+    image: blokopolis3,
     leveldifficulty: 'MED',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -370,7 +427,7 @@ export const markersData = [
     left: '24%',
     top: '42.25%',
     size: 'large',
-    image: noise,
+    image: fractopolis1,
     leveldifficulty: 'HARD',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -382,7 +439,7 @@ export const markersData = [
     left: '21%',
     top: '36.5%',
     size: 'large',
-    image: noise,
+    image: fractoplex,
     leveldifficulty: 'HARD',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -394,7 +451,7 @@ export const markersData = [
     left: '15%',
     top: '48.25%',
     size: '',
-    image: noise,
+    image: blokoplex,
     leveldifficulty: 'HARD',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -406,7 +463,7 @@ export const markersData = [
     left: '13.5%',
     top: '38%',
     size: 'large',
-    image: noise,
+    image: nucleus,
     leveldifficulty: 'BOSS',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -418,9 +475,9 @@ export const markersData = [
     left: '27.5%',
     top: '40%',
     size: '',
-    image: noise,
+    image: guitarGreen,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the Laser Guitar.`,
+    leveldesc: `This shrine unlocks the LASER GUITAR.`,
     additionalData: '...',
   },
 
@@ -430,9 +487,9 @@ export const markersData = [
     left: '27.5%',
     top: '32.5%',
     size: '',
-    image: noise,
+    image: warpgateGreenCyber,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to somewhere.`,
+    leveldesc: `This warpgate leads to the south western part of CYBER ZONE where you can find the ELECTRO GUITAR and the coveted KAHUNA MASK. On the north-west edge you'll find QUANTOZORD who guards one of the CRYPTOGEMS.`,
     additionalData: '...',
   },
 
@@ -442,9 +499,9 @@ export const markersData = [
     left: '33.25%',
     top: '42.25%',
     size: '',
-    image: noise,
+    image: warpgateCyan,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to somewhere.`,
+    leveldesc: `This warpgate leads to the southern part of CYBER ZONE where you can find the ELECTRO GUITAR and the coveted KAHUNA MASK. On the north-west edge you'll find QUANTOZORD who guards one of the CRYPTOGEMS.`,
     additionalData: '...',
   },
 
@@ -466,7 +523,7 @@ export const markersData = [
     left: '24%',
     top: '72%',
     size: 'large',
-    image: noise,
+    image: auroraDigitalis,
     leveldifficulty: 'HARD',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -478,7 +535,7 @@ export const markersData = [
     left: '13%',
     top: '72%',
     size: 'large',
-    image: noise,
+    image: fractopolis2,
     leveldifficulty: 'HARD',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -490,9 +547,9 @@ export const markersData = [
     left: '9.5%',
     top: '57.5%',
     size: '',
-    image: noise,
+    image: warpgateOrange,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to somewhere.`,
+    leveldesc: `This warpgate leads to a weird area known as FLUX ZONE.`,
     additionalData: '...',
   },
 
@@ -505,9 +562,9 @@ export const markersData = [
     left: '64.5%',
     top: '38%',
     size: '',
-    image: noise,
+    image: guitarPurple,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the Sonic Guitar.`,
+    leveldesc: `This shrine unlocks the SONIC GUITAR.`,
     additionalData: '...',
   },
 
@@ -517,9 +574,21 @@ export const markersData = [
     left: '64.5%',
     top: '46%',
     size: '',
-    image: noise,
+    image: buboidVoid,
     leveldifficulty: 'MED',
     leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'asteroid-void-3',
+    name: 'METEOR VOID',
+    left: '64%',
+    top: '31.5%',
+    size: '',
+    image: meteorvoid,
+    leveldifficulty: 'MED',
+    leveldesc: `There are gnarly meteor showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
     additionalData: '...',
   },
 
@@ -529,7 +598,7 @@ export const markersData = [
     left: '78.5%',
     top: '31.5%',
     size: 'large',
-    image: noise,
+    image: buboidCavern,
     leveldifficulty: 'HARD',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -541,9 +610,9 @@ export const markersData = [
     left: '84.5%',
     top: '37.25%',
     size: '',
-    image: noise,
+    image: warpgatePurple,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to somewhere.`,
+    leveldesc: `This warpgate leads to the south west side of NEBULAR ZONE which is infested with VIROVORES. Here you can find the powerful DEMON MASK as well as one of the CRYPTOGEMS guarded by MEGAWORM.`,
     additionalData: '...',
   },
   
@@ -557,7 +626,7 @@ export const markersData = [
     left: '61.5%',
     top: '50%',
     size: '',
-    image: noise,
+    image: krystalZone1,
     leveldifficulty: 'MED',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -569,7 +638,7 @@ export const markersData = [
     left: '66.25%',
     top: '54%',
     size: '',
-    image: noise,
+    image: krystalZone2,
     leveldifficulty: 'MED',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -581,7 +650,7 @@ export const markersData = [
     left: '71.75%',
     top: '54%',
     size: '',
-    image: noise,
+    image: krystalZone3,
     leveldifficulty: 'MED',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -593,7 +662,7 @@ export const markersData = [
     left: '73%',
     top: '66%',
     size: 'large',
-    image: noise,
+    image: krystoplex,
     leveldifficulty: 'HARD',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -605,7 +674,7 @@ export const markersData = [
     left: '67.5%',
     top: '66%',
     size: 'large',
-    image: noise,
+    image: krysallix,
     leveldifficulty: 'BOSS',
     leveldesc: `Here's a witty description of this level.`,
     additionalData: '...',
@@ -617,9 +686,9 @@ export const markersData = [
     left: '87.5%',
     top: '54%',
     size: '',
-    image: noise,
+    image: shrinePaladin,
     leveldifficulty: 'N/A',
-    leveldesc: 'This shrine unlocks the Paladin Mask, surrounding you in deadly protective orbs.',
+    leveldesc: 'This shrine unlocks the PALADIN MASK which surrounds you with deadly protective orbs.',
     additionalData: '...',
   },
 
@@ -629,30 +698,15 @@ export const markersData = [
     left: '76%',
     top: '49%',
     size: '',
-    image: noise,
+    image: warpgateGreenNebular,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to somewhere.`,
+    leveldesc: `This warpgate leads to west side of NEBULAR ZONE which is infested with VIROVORES. Here you can find the powerful DEMON MASK as well as one of the CRYPTOGEMS guarded by MEGAWORM`,
     additionalData: '...',
   },
 
 
 
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ENEMIES
 
@@ -709,7 +763,7 @@ desc: "Fires a wave of large slow moving bullets that can blast through groups o
 { id: 4, image: guitar_helix, bulletImage: bullet_helix, name: "HELIX", dmg: "2*", rate: "2", ammo: "16", 
 desc: "Launches a fast moving bullet orbited by two smaller bullets. * Orbiter bullets do an additional 1 damage each."},
 { id: 5, image: guitar_electro, bulletImage: bullet_electro, name: "ELECTRO", dmg: "3*", rate: "1.5", ammo: "12", 
-desc: "Electro bullets create explosions on impact. Great for blasting groups. * Explosions deal up to an additional 2 damage."},
+desc: "Electro bullets create explosions on impact. Great for blasting groups. * Explosions deal up to 2 additional splash damage."},
 { id: 6, image: guitar_laser, bulletImage: bullet_laser, name: "LASER", dmg: "4", rate: "1", ammo: "10", 
 desc: "The laser instaneously deals massive damage to anything in its path. The best weapon for dealing with tougher enemies."},
 
@@ -746,13 +800,17 @@ desc: "These grant you Crush Power. Try to collect all 5 of them to spell the wo
 desc: "Collect guitars to increase your firepower. Each pick-up gives you a limited amount of ammo."},
   { id: 4, image: mask, name: "MASK", pts: "16", 
 desc: "Masks protect you by absorbing one hit. There are 6 different masks and each grants you a unique special ability."},
-  { id: 5, image: mana_relic, name: "MANA RELIC", pts: "96", 
+  { id: 5, image: extra_HP, name: "EXTRA HITPOINT", pts: "16", 
+desc: "This restores 1 hitpoint, up to a maximum of 3."},
+ { id: 6, image: mana_relic, name: "MANA RELIC", pts: "96", 
 desc: "This item increases your overall mana capacity, as well as recharging your mana to its maximum."},
-  { id: 6, image: extra_continue, name: "EXTRA CONTINUE", pts: "128", 
+  { id: 7, image: extra_continue, name: "EXTRA CONTINUE", pts: "128", 
 desc: "Only appears in aracade mode. Your going to want to collect these if you plan on dying a lot."},
-  { id: 7, image: mana_recharge, name: "MANA RECHARGE", pts: "96", 
+  { id: 8, image: mana_recharge, name: "MANA RECHARGE", pts: "96", 
 desc: "This power-up slowly recharges your mana over time."},
-  { id: 8, image: double_guitar, name: "DOUBLE GUITAR", pts: "96", 
+  { id: 9, image: double_guitar, name: "DOUBLE GUITAR", pts: "96", 
 desc: "This power-up transforms your standard guitar into a two-necked guitar, increasing your firing rate."},
+  { id: 10, image: cryptogem, name: "CRYPTOGEM", pts: "N/A", 
+desc: "You must collect all 5 cryptogems and return to the Cybergate to complete your quest."},
 
 ];

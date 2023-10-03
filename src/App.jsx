@@ -77,6 +77,7 @@ function App() {
   var gnarnia = document.getElementById('gnarnia');
     var guitarBlue = document.getElementById('guitar-blue');
     var warpgateBlue = document.getElementById('warpgate-blue');
+  var asteroidVoid3 = document.getElementById('asteroid-void-3');
   var buboidCavern = document.getElementById('buboid-cavern');
     var warpgatePurple = document.getElementById('warpgate-purple');
 
@@ -86,6 +87,7 @@ function App() {
     setMarker(guitarBlue);
     setMarker(warpgateBlue);
   setMarker(buboidCavern);
+  setMarker(asteroidVoid3);
     setMarker(warpgatePurple);
 
   var digitemple1 = document.getElementById('digitemple-1');
@@ -98,6 +100,7 @@ function App() {
     var shrineMonkey = document.getElementById('shrine-monkey');
     var shrineDragon = document.getElementById('shrine-dragon');
     var cybergate = document.getElementById('cybergate');
+    var start = document.getElementById('start');
 
   setMarker(digitemple1);
   setMarker(digitemple2);
@@ -109,6 +112,7 @@ function App() {
     setMarker(shrineMonkey);
     setMarker(shrineDragon);
     setMarker(cybergate);
+    setMarker(start);
 
    var blokopolis1 = document.getElementById('blokopolis-1');
    var blokopolis2 = document.getElementById('blokopolis-2');
@@ -295,7 +299,7 @@ function App() {
 
        </div>
 
-      <div className="section-header" id="pickups"><h1>PICKUPS</h1></div>
+      <div className="section-header" id="items"><h1>ITEMS</h1></div>
 
        <div className="grid guitar-grid"> 
       

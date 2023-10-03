@@ -94,6 +94,11 @@ header{
 }
 
 @media screen and (max-width: 1100px) {
+  
+  header h1{
+    font-size:2.5rem;
+  }
+  
   .hero-text-container h2{
     font-size:1.25rem;
   }
@@ -221,7 +226,7 @@ header{
   font-size:1.5rem;
 }
 
-@media screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
   .top-nav a{
     font-size:1.25rem;
   }
@@ -234,7 +239,7 @@ header{
   margin: 1rem;
 }
 
-@media screen and (max-width: 1100px) {
+@media only screen and (max-width: 1100px) {
   .grid{
     grid-template-columns: 100%;
     margin-left: 0px;
@@ -380,7 +385,7 @@ header{
     grid-template-rows: 1fr 1fr 1fr;
   }
   .enemy-card div{
-    outline: 1px yellow dashed;
+    /*outline: 1px yellow dashed;*/
   }
 
   .enemy-image {
@@ -475,7 +480,7 @@ scroll-margin-top: 12rem;
   display:flex;
   position: relative;
 
-  min-width: 800px;
+  /*min-width: 800px;*/
   margin: auto;
   width: 90%;
   /*border: 2px solid rgb(0, 131, 0);*/
@@ -506,7 +511,7 @@ scroll-margin-top: 12rem;
 .map-marker{
   position: absolute;
   border-radius: 50%;
-  /*outline: 1px dashed aqua;*/ 
+  /*outline: 1px dashed aqua; */
   z-index: 1;
   width: 3%;
   height: 3%;
