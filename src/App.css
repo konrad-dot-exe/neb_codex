@@ -3,13 +3,21 @@
   margin: 0 auto;
   padding: 1rem;
   text-align: left;
-  --clr-dark-green: rgb(7, 43, 13);
+  --clr-dark-green: rgb(5, 15, 43);
   --clr-nebular-green-500: lime;
   --clr-nebular-purple-500: rgb(223, 2, 252); 
   --clr-nebular-purple-400: rgb(140, 0, 153);
   --clr-nebular-purple-200: rgb(69, 1, 78);  
   --clr-purple-outline: rgb(255, 104, 255);
+  --card-bg-gradient: linear-gradient(rgba(9, 32, 77, 0.7), rgba(37, 5, 58, 0.781)), url("assets/cyber-tex-1.png");
+  --speech-bg-gradient: linear-gradient(rgba(9, 32, 77, 0.7), rgba(37, 5, 58, 0.781));
   --border_radius: 8px;
+}
+
+@media screen and (max-width: 900px) {
+  #root {
+    padding: 0px;
+  } 
 }
 
 .black-rect{
@@ -41,7 +49,7 @@ header{
   /*outline: 1px dashed red;*/
   flex-direction:column;
   background-color: rgb(0, 100, 45);
-  background: linear-gradient(rgba(4, 82, 34, 0.7), rgba(21, 31, 28, 0.781)), url("assets/cyber-tex-1.png");
+  background: var(--card-bg-gradient);
   background-repeat: repeat;
   border-radius: var(--border_radius);
 }
@@ -52,7 +60,7 @@ header{
   margin-top: 17vh; 
   width:80%;
   min-width: 320px;
-  height:66vh;
+  
   z-index:6;
 }
 
@@ -80,9 +88,57 @@ header{
 
 .hero-text-container h2{
 
-  background-color:var(--clr-nebular-purple-200);
+  background:var(--speech-bg-gradient);
   padding:5%;
   border-radius:var(--border_radius);
+}
+
+@media screen and (max-width: 1100px) {
+  .hero-text-container h2{
+    font-size:1.25rem;
+  }
+  .hero{
+    flex-direction: column;
+  }
+
+  .wizzy-hero{
+    width: 50%;
+    min-width: 320px;
+    margin:auto; 
+    
+  }
+
+  .hero-image-container{
+    margin-top: 0px;  
+  }
+
+  .hero-text-container{
+    margin-bottom: 0px;  
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .hero{
+    display:block;
+    flex-direction: column;
+  }
+
+  .wizzy-hero{
+    width: 50%;
+    min-width: 256px;
+    margin:auto;  
+  }
+
+  .hero-image-container{
+    margin-top: 0px;  
+  }
+
+  .hero-text-container{
+    margin-bottom: 0px;  
+  }
+
 }
 
 .hero-accent{
@@ -103,7 +159,7 @@ header{
   min-height: 12vh;
   flex-direction:column;
 
-  background: linear-gradient(rgba(4, 82, 34, 0.7), rgba(21, 31, 28, 0.781)), url("assets/cyber-tex-1.png");
+  background: var(--card-bg-gradient);
   background-repeat: repeat;
   border-radius: var(--border_radius);
   opacity: 0%;
@@ -154,8 +210,8 @@ header{
   min-width: 320px;
   min-height: 5vh;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-  background-color: rgb(0, 100, 45);
-  background: linear-gradient(rgba(4, 82, 34, 0.7), rgba(21, 31, 28, 0.781)), url("assets/cyber-tex-1.png");
+
+  background: var(--card-bg-gradient);
   background-repeat: repeat;
   border-radius: var(--border_radius);
 }
@@ -165,11 +221,25 @@ header{
   font-size:1.5rem;
 }
 
+@media screen and (max-width: 800px) {
+  .top-nav a{
+    font-size:1.25rem;
+  }
+}
+
 .grid{
   display: grid;
   grid-template-columns: 50% 50%;
   border-radius: var(--border_radius);
   margin: 1rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .grid{
+    grid-template-columns: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 
 }
 
@@ -202,7 +272,7 @@ header{
   margin: 0.5rem;
   color:rgb(255, 255, 255);
   background-color: rgb(0, 100, 45);
-  background: linear-gradient(rgba(4, 82, 34, 0.7), rgba(21, 31, 28, 0.781)), url("assets/cyber-tex-1.png");
+  background: var(--card-bg-gradient);
   border-radius: var(--border_radius);
 }
 
@@ -242,7 +312,7 @@ header{
   background-color:rgb(0, 0, 0); 
   border-radius: var(--border_radius);
   border: 2px black solid;
-}
+} 
 
 .bullet-image {
   margin: 0.5rem;
@@ -261,7 +331,6 @@ header{
 .enemy-name {
   display: flex;
   flex-direction: column;
-
   text-align: left;
   grid-column-start: 4;
   grid-column-end: 7;
@@ -273,7 +342,6 @@ header{
 .guitar-name {
   display: flex;
   flex-direction: column;
-
   text-align: left;
   grid-column-start: 5;
   grid-column-end: 7;
@@ -289,6 +357,8 @@ header{
   margin: .5rem;
 }
 
+
+
 .enemy-desrciption{
   grid-column-start: 4;
   grid-column-end: 10;
@@ -299,6 +369,50 @@ header{
   border-radius: var(--border_radius);
   padding:0.25rem;
 }
+
+@media screen and (max-width: 700px) {
+  .enemy-card{
+    background: var(--card-bg-gradient);
+    padding: 0.25rem;
+    margin: 0.25rem;
+    border-radius: 0%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .enemy-card div{
+    outline: 1px yellow dashed;
+  }
+
+  .enemy-image {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .enemy-name{
+    grid-column-start: 4;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 2; 
+  }
+
+  .enemy-stat {
+    grid-row-start: 2;
+    grid-row-end: 3; 
+  }
+
+  .enemy-desrciption{
+  grid-column-start: 1;
+  grid-column-end: 10;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  background-color: var(--clr-dark-green);
+  margin: 0.5rem;
+  border-radius: var(--border_radius);
+  padding:0.25rem;
+}
+} 
 
 .mana-usage{
   display: flex;
@@ -315,6 +429,15 @@ header{
 .pickup-points{
   grid-column-start: 9;
 }
+
+@media screen and (max-width: 800px) {
+  .enemy-card{
+    background: var(--card-bg-gradient);
+    padding: 0.25rem;
+    margin: 0.25rem;
+    border-radius: 0%;
+  }
+}  
 
 .map-container{
   min-width: 320px;

@@ -164,14 +164,6 @@ function App() {
     setMarker(shrinePaladin);
     setMarker(warpgateGreenKrsytal);
 
-  
-
-  
-
-  
-
-  
-  
 };
 
   return (
