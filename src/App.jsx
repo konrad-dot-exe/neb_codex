@@ -48,6 +48,17 @@ function App() {
           infocardName.textContent = levelName;
           infocardDesc.textContent = levelDesc;
           infocardDifficulty.textContent = "Difficulty: " + levelDifficulty;
+          if (infocardDifficulty.textContent == "Difficulty: N/A"){
+            
+            console.log("none");
+            infocardDifficulty.style.display = "none";
+            infocardImage.style.marginBottom = "1rem";
+
+          }else{
+            infocardDifficulty.style.display = "block";
+            infocardImage.style.marginBottom = "0px";
+
+          }
           infocardImage.src = levelImage;
           infocard.style.right= "0px";
           
@@ -55,7 +66,7 @@ function App() {
 
       marker.addEventListener('mouseleave', function() {
           marker.style.opacity = "0%";
-          infocard.style.opacity = "0%";
+          
 
           infocard.style.right= "-30%";
       });
