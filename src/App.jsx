@@ -49,39 +49,128 @@ function App() {
           infocardDesc.textContent = levelDesc;
           infocardDifficulty.textContent = "Difficulty: " + levelDifficulty;
           infocardImage.src = levelImage;
+          infocard.style.right= "0px";
           
       });
 
       marker.addEventListener('mouseleave', function() {
           marker.style.opacity = "0%";
           infocard.style.opacity = "0%";
+
+          infocard.style.right= "-30%";
       });
 
     }
 
   var shredonia = document.getElementById('shredonia');
   var warpgateYellow = document.getElementById('warpgate-yellow');
-  var shrineChrono = document.getElementById('shrine-chrono');
-  
+    var shrineChrono = document.getElementById('shrine-chrono');
   var astroidVoid1 = document.getElementById('astroid-void-1');
   
+  setMarker(shredonia);
+    setMarker(warpgateYellow);
+    setMarker(shrineChrono);
+  setMarker(astroidVoid1);
+
   var fluviousFalls = document.getElementById('fluvious-falls');
   var blokoCavern = document.getElementById('bloko-cavern');
-  //var sawtoothCave = document.getElementById('sawtooth-cave');
-  //var guitarShrineBlue = document.getElementById('guitar-shrine-blue');
-  //var warpgateBlue = document.getElementById('warpgate-blue');
-
-  setMarker(shredonia);
-  setMarker(warpgateYellow);
-  setMarker(shrineChrono);
-
-  setMarker(astroidVoid1);
+  var gnarnia = document.getElementById('gnarnia');
+    var guitarBlue = document.getElementById('guitar-blue');
+    var warpgateBlue = document.getElementById('warpgate-blue');
+  var buboidCavern = document.getElementById('buboid-cavern');
+    var warpgatePurple = document.getElementById('warpgate-purple');
 
   setMarker(fluviousFalls);
   setMarker(blokoCavern);
-  //setMarker(sawtoothCave);
-  //setMarker(guitarShrineBlue);
-  //setMarker(warpgateBlue);
+  setMarker(gnarnia);
+    setMarker(guitarBlue);
+    setMarker(warpgateBlue);
+  setMarker(buboidCavern);
+    setMarker(warpgatePurple);
+
+  var digitemple1 = document.getElementById('digitemple-1');
+  var digitemple2 = document.getElementById('digitemple-2');
+  var digitemple3 = document.getElementById('digitemple-3');
+  var blokoReef = document.getElementById('bloko-reef');
+  var nebularVoid = document.getElementById('nebular-void');
+    var guitarYellow = document.getElementById('guitar-yellow');
+    var guitarRed = document.getElementById('guitar-red');
+    var shrineMonkey = document.getElementById('shrine-monkey');
+    var shrineDragon = document.getElementById('shrine-dragon');
+    var cybergate = document.getElementById('cybergate');
+
+  setMarker(digitemple1);
+  setMarker(digitemple2);
+  setMarker(digitemple3);
+  setMarker(blokoReef);
+  setMarker(nebularVoid);
+    setMarker(guitarRed);
+    setMarker(guitarYellow);
+    setMarker(shrineMonkey);
+    setMarker(shrineDragon);
+    setMarker(cybergate);
+
+   var blokopolis1 = document.getElementById('blokopolis-1');
+   var blokopolis2 = document.getElementById('blokopolis-2');
+   var blokopolis3 = document.getElementById('blokopolis-3');
+   var blokohub = document.getElementById('blokohub');
+   var fractopolis = document.getElementById('fractopolis');
+   var fractoplex = document.getElementById('fractoplex');
+   var blokoplex = document.getElementById('blokoplex');
+   var nucleus = document.getElementById('nucleus');
+    var guitarGreen = document.getElementById('guitar-green');
+    var warpgateGreen = document.getElementById('warpgate-green-bloko');
+    var warpgateCyan = document.getElementById('warpgate-cyan');
+  var astroidVoid2 = document.getElementById('astroid-void-2');
+  var auroraDigitalis = document.getElementById('aurora-digitalis');
+  var fractopolis2 = document.getElementById('fractopolis-2');
+    var warpgateOrange = document.getElementById('warpgate-orange');
+  
+  setMarker(blokopolis1);
+  setMarker(blokopolis2);
+  setMarker(blokopolis3);
+  setMarker(blokohub);
+  setMarker(fractopolis);
+  setMarker(fractoplex);
+  setMarker(blokoplex);
+  setMarker(nucleus);
+    setMarker(guitarGreen);
+    setMarker(warpgateGreen);
+    setMarker(warpgateCyan);
+  setMarker(astroidVoid2);
+  setMarker(auroraDigitalis);
+  setMarker(fractopolis2);
+    setMarker(warpgateOrange);
+
+  var buboidVoid = document.getElementById('buboid-void');
+    var guitarPurple = document.getElementById('guitar-purple');    
+
+  setMarker(buboidVoid);
+    setMarker(guitarPurple);    
+
+  var krystalZone1 = document.getElementById('krystal-zone-1');
+  var krystalZone2 = document.getElementById('krystal-zone-2');
+  var krystalZone3 = document.getElementById('krystal-zone-3');
+  var krystoplex = document.getElementById('krystoplex');
+  var krysallix = document.getElementById('krysallix');
+    var shrinePaladin = document.getElementById('shrine-paladin');
+    var warpgateGreenKrsytal = document.getElementById('warpgate-green-krystal');
+
+  setMarker(krystalZone1);
+  setMarker(krystalZone2);
+  setMarker(krystalZone3);
+  setMarker(krystoplex);
+  setMarker(krysallix);
+    setMarker(shrinePaladin);
+    setMarker(warpgateGreenKrsytal);
+
+  
+
+  
+
+  
+
+  
   
 };
 
@@ -98,8 +187,10 @@ function App() {
 
       <div className="hero"> 
       
-      <div className="hero-text-container" ><h2> Welcome to the <span className="hero-accent">Nebular Codex!</span> Here you can study all of the secrets of Nebular Crush and level up from noob-ular to nebular!</h2> </div>
-      <div className="hero-image-container"> <img className="wizzy-hero" src={wizzy}></img> </div>
+        <div className="hero-text-container" >
+          <h2> Welcome to the <span className="hero-accent">Nebular Codex!</span> Here you can study all of the secrets of Nebular Crush and level up from noob-ular to nebular!</h2> 
+        </div>
+        <div className="hero-image-container"> <img className="wizzy-hero" src={wizzy}></img> </div>
       
       </div>
 
@@ -255,7 +346,6 @@ function App() {
       </div>
 
        <div className="map-container">
-
         <div className="img-magnifier-container" id="imgContainer">
           <img id="myimage" src={worldmap} width="100%"/>
         </div>
@@ -279,8 +369,6 @@ function App() {
 
         {/*
 
-
-       <div className="map-marker large" id="sawtooth-cave" style={{left: 55.25 + '%', top: 26.5 + '%'}} > <h4> SAWTOOTH CAVE </h4> </div>
        <div className="map-marker" id="warpgate-blue" style={{left: 45.5 + '%', top: 26.5 + '%'}} > <h4> BLUE WARPGATE </h4> </div>
        <div className="map-marker" id="guitar-shrine-blue" style={{left: 51.5 + '%', top: 25.75 + '%'}} > <h4> BLUE GUITAR </h4> </div>
 

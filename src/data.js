@@ -62,16 +62,22 @@ import double_guitar from './assets/double_guitar.png'
 
 // WORLDMAP
 
-import screenshot from './assets/screenshot.png'
+import noise from './assets/screenshots/noise.png'
 import shredonia from './assets/screenshots/shredonia.png'
 import meteorvoid from './assets/screenshots/meteor_void_1.png'
 import fluviousA from './assets/screenshots/fluvious-falls-a.png'
 import shrineChrono from './assets/screenshots/shrine-chrono.png'
 import warpgateYellow from './assets/screenshots/warpgate-yellow.png'
 import blokoCavern from './assets/screenshots/bloko_cavern.png'
+import gnarnia from './assets/screenshots/gnarnia.png'
+import warpgateBlue from './assets/screenshots/warpgate-blue.png'
+import guitarBlue from './assets/screenshots/guitar-blue.png'
 
 export const markersData = [
   {
+
+// SHREDONIA ISLAND
+
     id: 'shredonia',
     name: 'SHREDONIA',
     left: '37.75%',
@@ -99,7 +105,7 @@ export const markersData = [
 
   {
     id: 'shrine-chrono',
-    name: 'CHRONO SHRINE',
+    name: 'CHRONO MASK',
     left: '43.75%',
     top: '12%',
     size: '',
@@ -107,7 +113,6 @@ export const markersData = [
     leveldifficulty: 'N/A',
     leveldesc: 'This shrine unlocks the Chrono Mask, granting you time warping powers.',
     additionalData: '...',
-    
   },
 
   {
@@ -118,10 +123,11 @@ export const markersData = [
     size: '',
     image: meteorvoid,
     leveldifficulty: 'MEDIUM',
-    leveldesc: `There are gnarly meteor showers in this void. Sometimes it's best to just dodge meteors because they break into fragments when destroyed.`,
+    leveldesc: `There are gnarly meteor showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
     additionalData: '...',
-    
   },
+
+// CYAN ZONE
 
    {
     id: 'fluvious-falls',
@@ -146,9 +152,490 @@ export const markersData = [
     leveldifficulty: 'MEDIUM',
     leveldesc: `This is a large cavern to explore. Unlike most levels, this one actually scrolls vertically rather than wrapping on the edges of the screen.`,
     additionalData: '...',
-    
+  },
+
+  {
+    id: 'gnarnia',
+    name: 'GNARIA',
+    left: '56.5%',
+    top: '31.5%',
+    size: 'large',
+    image: gnarnia,
+    leveldifficulty: 'MEDIUM',
+    leveldesc: `This is a fast level with a focus on dodging obstacles such as spikes which shoot off the walls.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'warpgate-blue',
+    name: 'BLUE WARPGATE',
+    left: '45.75%',
+    top: '30%',
+    size: '',
+    image: warpgateBlue,
+    leveldifficulty: 'N/A',
+    leveldesc: `This warpgate leads to a weird area known as Flux Zone.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'guitar-blue',
+    name: 'BLUE GUITAR',
+    left: '51.75%',
+    top: '29.25%',
+    size: '',
+    image: guitarBlue,
+    leveldifficulty: 'N/A',
+    leveldesc: `This shrine unlocks the Helix Guitar.`,
+    additionalData: '...',
+  },
+
+// GREEN ZONE
+
+  {
+    id: 'digitemple-1',
+    name: 'DIGITEMPLE 1',
+    left: '53.5%',
+    top: '69.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'EASY',
+    leveldesc: `The first level in the game. Even a drunken one-armed monkey could beat this one.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'digitemple-2',
+    name: 'DIGITEMPLE 2',
+    left: '48%',
+    top: '69.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'EASY',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'digitemple-3',
+    name: 'DIGITEMPLE 3',
+    left: '51.75%',
+    top: '59.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'EASY',
+    leveldesc: `The first level in the game. Even a drunken one-armed monkey could beat this one.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'guitar-yellow',
+    name: 'YELLOW GUITAR',
+    left: '54.75%',
+    top: '59.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This shrine unlocks the Spread Guitar.`,
+    additionalData: '...',
+  },
+
+   {
+    id: 'bloko-reef',
+    name: 'BLOKO REEF',
+    left: '41%',
+    top: '66%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'EASY',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'nebular-void',
+    name: 'NEBULAR VOID',
+    left: '48%',
+    top: '56%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'MED',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'shrine-monkey',
+    name: 'MONKEY MASK',
+    left: '37.25%',
+    top: '64%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: 'This shrine unlocks the Monkey Mask, granting you a savage boost to your speed.',
+    additionalData: '...',
   },
   
+  {
+    id: 'guitar-red',
+    name: 'RED GUITAR',
+    left: '59.75%',
+    top: '74%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This shrine unlocks the Rapid Guitar.`,
+    additionalData: '...',
+  },
+  
+// GREEN ZONE EXT
+
+   {
+    id: 'cybergate',
+    name: 'CYBERGATE',
+    left: '48.75%',
+    top: '84%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This gate will activate once you have collected the 5 cryptogems. Use it to transport to the final zone and beat the game!`,
+    additionalData: '...',
+  }, 
+
+  {
+    id: 'shrine-dragon',
+    name: 'DRAGON MASK',
+    left: '36%',
+    top: '75.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: 'This shrine unlocks the Dragon Mask which sprays nearby enemies with fire.',
+    additionalData: '...',
+  },
+  
+// BLOKOPOLIS
+
+  {
+    id: 'blokopolis-1',
+    name: 'BLOKOPOLIS 1',
+    left: '33.75%',
+    top: '50%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'MED',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'blokohub',
+    name: 'BLOKOHUB',
+    left: '30%',
+    top: '52.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'MED',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'blokopolis-2',
+    name: 'BLOKOPOLIS 2',
+    left: '24%',
+    top: '52.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'MED',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'blokopolis-3',
+    name: 'BLOKOPOLIS 3',
+    left: '18%',
+    top: '52.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'MED',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'fractopolis',
+    name: 'FRACTOPOLIS 1',
+    left: '24%',
+    top: '42.25%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'HARD',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'fractoplex',
+    name: 'FRACTOPLEX',
+    left: '21%',
+    top: '36.5%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'HARD',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'blokoplex',
+    name: 'BLOKOPLEX',
+    left: '15%',
+    top: '48.25%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'HARD',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'nucleus',
+    name: 'NUCLEUS',
+    left: '13.5%',
+    top: '38%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'BOSS',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'guitar-green',
+    name: 'GREEN GUITAR',
+    left: '27.5%',
+    top: '40%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This shrine unlocks the Laser Guitar.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'warpgate-green-bloko',
+    name: 'GREEN WARPGATE',
+    left: '27.5%',
+    top: '32.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This warpgate leads to somewhere.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'warpgate-cyan',
+    name: 'CYAN WARPGATE',
+    left: '33.25%',
+    top: '42.25%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This warpgate leads to somewhere.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'astroid-void-2',
+    name: 'METEOR VOID',
+    left: '30%',
+    top: '64.5%',
+    size: '',
+    image: meteorvoid,
+    leveldifficulty: 'MEDIUM',
+    leveldesc: `There are gnarly meteor showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'aurora-digitalis',
+    name: 'AURORA DIGITALIS',
+    left: '24%',
+    top: '72%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'HARD',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'fractopolis-2',
+    name: 'FRACTOPOLIS 2',
+    left: '13%',
+    top: '72%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'HARD',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'warpgate-orange',
+    name: 'ORANGE WARPGATE',
+    left: '9.5%',
+    top: '57.5%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This warpgate leads to somewhere.`,
+    additionalData: '...',
+  },
+
+
+// CYAN ZONE EXT
+
+  {
+    id: 'guitar-purple',
+    name: 'PURPLE GUITAR',
+    left: '64.5%',
+    top: '38%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This shrine unlocks the Sonic Guitar.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'buboid-void',
+    name: 'BUBOID VOID',
+    left: '64.5%',
+    top: '46%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'MED',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'buboid-cavern',
+    name: 'BUBOID CAVERN',
+    left: '78.5%',
+    top: '31.5%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'HARD',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'warpgate-purple',
+    name: 'PURPLE WARPGATE',
+    left: '84.5%',
+    top: '37.25%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This warpgate leads to somewhere.`,
+    additionalData: '...',
+  },
+  
+
+
+// CRYSTAL ZONE
+
+  {
+    id: 'krystal-zone-1',
+    name: 'KRYSTAL ZONE 1',
+    left: '61.5%',
+    top: '50%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'MED',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'krystal-zone-2',
+    name: 'KRYSTAL ZONE 2',
+    left: '66.25%',
+    top: '54%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'MED',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'krystal-zone-3',
+    name: 'KRYSTAL ZONE 3',
+    left: '71.75%',
+    top: '54%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'MED',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'krystoplex',
+    name: 'KRYSTOPLEX',
+    left: '73%',
+    top: '66%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'HARD',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'krysallix',
+    name: 'KRYSALLIX',
+    left: '67.5%',
+    top: '66%',
+    size: 'large',
+    image: noise,
+    leveldifficulty: 'BOSS',
+    leveldesc: `Here's a witty description of this level.`,
+    additionalData: '...',
+  },
+
+  {
+    id: 'shrine-paladin',
+    name: 'PALADIN MASK',
+    left: '87.5%',
+    top: '54%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: 'This shrine unlocks the Paladin Mask, surrounding you in deadly protective orbs.',
+    additionalData: '...',
+  },
+
+  {
+    id: 'warpgate-green-krystal',
+    name: 'GREEN WARPGATE',
+    left: '76%',
+    top: '49%',
+    size: '',
+    image: noise,
+    leveldifficulty: 'N/A',
+    leveldesc: `This warpgate leads to somewhere.`,
+    additionalData: '...',
+  },
+
+
 
 ];
 
@@ -181,7 +668,7 @@ desc: "Watch out, this guy will charge at you if you get too close."},
 desc: "Think twice before blasting this guy. It fires bullets in all directions when it dies."},
 
    { id: 5, image: sentry, name: "SENTRY", hp: "2", pts: "8", dngr: "MED",
-desc: "This thing mimics your firing patterns."},
+desc: "This thing mimics your firing patterns so don't spray to many bullets around it"},
   { id: 6, image: purple_worm, name: "PURPLE WORM", hp: "2", pts: "16", dngr: "LOW",
 desc: "It’s big but dopey. It just wanders around and bumps into things. Aim for the head."},
    { id: 7, image: giant_spikeball, name: "GIANT SPIKEBALL", hp: "5", pts: "12", dngr: "MED",   
