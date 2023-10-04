@@ -22,7 +22,7 @@ html{
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--clr-nebular-purple-400); 
   text-decoration: inherit;
 }
 a:hover {
@@ -70,6 +70,10 @@ button:focus-visible {
     color: #2bff00;
   }
   button {
-      background-color: #ea26fc;
+      background-color: #390047;
+      color: white;
+      border: 1px solid var(--clr-purple-outline);
+      margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }

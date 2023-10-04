@@ -185,11 +185,10 @@ function App() {
 
   return (
     <>
-      <div className="black-rect">
-      </div>
+      
       
       <header >
-        <h1 >NEBULAR CODEX</h1>
+        <a href ="#"><h1>NEBULAR CODEX</h1></a>
       </header>
 
         <Navbar/>
@@ -198,7 +197,7 @@ function App() {
       
         <div className="hero-text-container" >
           <h2> Welcome to the <span className="hero-accent">Nebular Codex!</span> Here you can study all of the secrets of Nebular Crush and level up from noob-ular to nebular!</h2> 
- 
+          <button onClick={ () => window.location.href = "http://www.nebularcrush.com"}> What the heck is<br/>Nebular Crush? </button>
         
         </div>
         <div className="hero-image-container"> <img className="wizzy-hero" src={wizzy}></img> </div>
@@ -206,7 +205,7 @@ function App() {
       </div>
 
 
-      <div className="section-header first" id="enemies"><h1>ENEMIES</h1></div>
+      <div className="section-header" id="enemies"><h1>ENEMIES</h1></div>
 
       <div className="grid enemy-grid"> 
 

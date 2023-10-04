@@ -144,7 +144,7 @@ export const markersData = [
     size: 'large',
     image: shredonia,
     leveldifficulty: 'HARD',
-    leveldesc: 'This is a fast level with a focus on dodging obstacles such as spikes which shoot off the walls.',
+    leveldesc: `A really fast and intense roller-coaster of a level where spikes keep shooting off the frickin' walls.`,
     additionalData: '...',
     
   },
@@ -158,8 +158,7 @@ export const markersData = [
     image: warpgateYellow,
     leveldifficulty: 'N/A',
     leveldesc: 'This warpgate leads to the eastern edge of CYBER ZONE where you will find the ELECTRO GUITAR.',
-    additionalData: '...',
-    
+    additionalData: '...',  
   },
 
   {
@@ -198,7 +197,6 @@ export const markersData = [
     leveldifficulty: 'MEDIUM',
     leveldesc: `There are lots of EXPLODOS and SENTRIES here, so you may want to shoot strategically rather than going in guns blazing.`,
     additionalData: '...',
-    
   },
 
   {
@@ -221,7 +219,7 @@ export const markersData = [
     size: 'large',
     image: gnarnia,
     leveldifficulty: 'MEDIUM',
-    leveldesc: `This is a fast level with a focus on dodging obstacles such as spikes which shoot off the walls.`,
+    leveldesc: `A fast and intense roller-coaster of a level where spikes keep shooting off the frickin' walls.`,
     additionalData: '...',
   },
 
@@ -259,7 +257,7 @@ export const markersData = [
     size: '',
     image: digitemple1,
     leveldifficulty: 'EASY',
-    leveldesc: `The first level in the game. Even a drunk monkey could beat this one. Try and get to the secret area behind the electro barriers!`,
+    leveldesc: `The first level in the game. This one is just easy enough to give you a false sense of confidence before the game crushes you with difficulty. Try and get to the secret area behind the electro barriers!`,
     additionalData: '...',
   },
 
@@ -271,7 +269,7 @@ export const markersData = [
     size: '',
     image: digitemple2,
     leveldifficulty: 'EASY',
-    leveldesc: `The first place you'll encounter those big dopey PURPLE WORMS. There are a few secrets hidden on this one.`,
+    leveldesc: `The first place you'll encounter those big dopey PURPLE WORMS. There are a few secrets hidden on this one so try and explore some nooks.`,
     additionalData: '...',
   },
 
@@ -395,7 +393,7 @@ export const markersData = [
     size: '',
     image: blokopolis1,
     leveldifficulty: 'MED',
-    leveldesc: `On the outskirts of Blokopolis, this level introduces a bunch of new enemies and obstacles including ORBITRONS, SENTINELS, SMART TURRETS, and large moving platforms.`,
+    leveldesc: `On the outskirts of Blokopolis, this level introduces a bunch of new enemies including ORBITRONS, SENTINELS, and TURRETS.`,
     additionalData: '...',
   },
 
@@ -539,7 +537,7 @@ export const markersData = [
     size: 'large',
     image: auroraDigitalis,
     leveldifficulty: 'HARD',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `A floating outpost of Blokopolis where you must battle through fleets of DELTOS and encounter several QUANTOIDS.`,
     additionalData: '...',
   },
 
@@ -551,7 +549,7 @@ export const markersData = [
     size: 'large',
     image: fractopolis2,
     leveldifficulty: 'EXTREME',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `Another level where all of the platforms are constantly moving and wrapping through the screen. There are tons of TURRETS, so get ready for some serious bullet heck!`,
     additionalData: '...',
   },
 
@@ -630,8 +628,6 @@ export const markersData = [
     additionalData: '...',
   },
   
-
-
 // CRYSTAL ZONE
 
   {
@@ -832,16 +828,16 @@ export const pickupData = [
   { id: 1, image: mana_packet, name: "MANA PACKET", pts: "8", 
 desc: "These things are everywhere. Each one recharges your mana by 4 points."},
   { id: 2, image: crush_rune, name: "CRUSH RUNE", pts: "16", 
-desc: "These grant you Crush Power. Try to collect all 5 of them to spell the word ‘CRUSH’. The more you have, the greater the effect. Each one also recahrges your mana by 6 points. "},
+desc: "Recharges 9 mana points. Collect all five runes to spell C-R-U-S-H. Runes can be discharged to grant you Crush Power."},
   { id: 3, image: guitar, name: "GUITAR", pts: "8", 
 desc: "Collect guitars to increase your firepower. Each pick-up gives you a limited amount of ammo."},
   { id: 4, image: mask, name: "MASK", pts: "16", 
 desc: "Masks protect you by absorbing one hit. There are 6 different masks and each grants you a unique special ability."},
-  { id: 5, image: extra_HP, name: "EXTRA HITPOINT", pts: "16", 
+  { id: 5, image: extra_HP, name: "HITPOINT", pts: "16", 
 desc: "This restores 1 hitpoint, up to a maximum of 3."},
  { id: 6, image: mana_relic, name: "MANA RELIC", pts: "96", 
 desc: "This item increases your overall mana capacity, as well as recharging your mana to its maximum."},
-  { id: 7, image: extra_continue, name: "EXTRA CONTINUE", pts: "128", 
+  { id: 7, image: extra_continue, name: "CONTINUE", pts: "128", 
 desc: "Only appears in aracade mode. Your going to want to collect these if you plan on dying a lot."},
   { id: 8, image: mana_recharge, name: "MANA RECHARGE", pts: "96", 
 desc: "This power-up slowly recharges your mana over time."},

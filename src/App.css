@@ -5,10 +5,12 @@
   text-align: left;
   --clr-dark-green: rgb(5, 15, 43);
   --clr-nebular-green-500: lime;
+  --clr-nebular-purple-600: rgb(230, 37, 255); 
   --clr-nebular-purple-500: rgb(223, 2, 252); 
   --clr-nebular-purple-400: rgb(140, 0, 153);
   --clr-nebular-purple-200: rgb(69, 1, 78);  
   --clr-purple-outline: rgb(255, 104, 255);
+  --clr-card-outline: rgb(0, 104, 64);
   --card-bg-gradient: linear-gradient(rgba(9, 32, 77, 0.7), rgba(37, 5, 58, 0.781)), url("assets/cyber-tex-1.png");
   --speech-bg-gradient: linear-gradient(rgba(9, 32, 77, 0.7), rgba(37, 5, 58, 0.781));
   --border_radius: 8px;
@@ -21,7 +23,9 @@
 }
 
 .black-rect{
-z-index: 2;
+transition:0.6s all;
+pointer-events: none;
+z-index: 4;
 position: fixed;
 height: 16vh;
 background-color:rgb(0, 0, 0);
@@ -31,8 +35,21 @@ top: 0;
   width: 100%;
 }
 
+.darken-overlay{
+  transition: all 0.6s;
+  z-index: 2;
+  opacity: 0%;
+  background-color:black;
+  position: fixed;
+  top:0%;
+  left:0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 header{
-  z-index: 3;
+  z-index: 5;
   display: flex;
   position: fixed;
   top: 0;
@@ -52,6 +69,7 @@ header{
   background: var(--card-bg-gradient);
   background-repeat: repeat;
   border-radius: var(--border_radius);
+  outline: 1px solid var(--clr-card-outline);
 }
 
 .hero{
@@ -89,7 +107,7 @@ header{
 }
 
 .hero-text-container h2{
-
+  
   background:var(--speech-bg-gradient);
   padding:5%;
   border-radius:var(--border_radius);
@@ -135,42 +153,42 @@ header{
   display: flex;
   position: fixed;
   top: 18vh;
-  right: -100vw;
+
   width: 20%;
   margin: 8px;
   place-items:center;
   min-width: 320px;
   min-height: 12vh;
   flex-direction:column;
-
+  right: -100vw;
   background: var(--card-bg-gradient);
   background-repeat: repeat;
   border-radius: var(--border_radius);
-  opacity: 0%;
   transition:0.6s all;
   pointer-events: none;
+  outline: 1px solid var(--clr-card-outline);
+  padding: 1rem;
 }
 
 .infocard-name{
   color: var(--clr-nebular-purple-500);
+  margin-top:0px;
+  margin-bottom: 1rem;
 }
 
 .infocard-image{
   width: 100%;
-  padding: 5%;
-  padding-top:0%;
-  padding-bottom:0%;
-  border-radius: 10%;
+  border-radius: var(--border_radius);
   object-fit: cover;
+  border: 1px solid var(--clr-card-outline);
 }
 
 .infocard-description{
   background-color: var(--clr-dark-green);
-  margin: 1rem;
-  margin-top: 0%;
   border-radius: var(--border_radius);
   padding:0.25rem;
   padding-top:0%;
+  border: 1px solid var(--clr-card-outline);
 }
 
 .infocard-description p{
@@ -183,7 +201,7 @@ header{
 }
 
 .top-nav{
-  z-index: 3;
+  z-index: 5;
   display: flex;
   position: fixed;
   top: 12vh;
@@ -201,6 +219,8 @@ header{
   background: var(--card-bg-gradient);
   background-repeat: repeat;
   border-radius: var(--border_radius);
+  outline: 1px solid var(--clr-card-outline);
+  box-shadow: 0px 4px 8px 1px #000000;
 }
 
 .hamburger-icon{
@@ -213,32 +233,43 @@ header{
 
 .hamburger-menu{
 
-    z-index: 1;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: -33vh;
+    top: -100%; 
     place-items:center;
     justify-content: center;
     overflow-x: hidden;
     width:96%;
     left: 50%;
     transform: translate(-50%, -0%);
-    
-    color: white;
+    height: 82vh;
     background: var(--card-bg-gradient);
     background-repeat: repeat;
     border-radius: var(--border_radius);
     opacity: 100%;
     transition:0.6s all;
+    outline: 1px solid var(--clr-card-outline);
+}
+
+.hamburger-link-container{
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-dark-green);
+  border-radius: var(--border_radius);
+  text-align: center;
+  padding:10%;
+  outline: 1px solid var(--clr-card-outline);
 }
 
 .hamburger-menu a{
-    padding: 10px 10px 10px 10px;
+    margin: 1rem;
     text-decoration: none;
-    font-size: 22px;
-    color: var(--clr-nebular-purple-500);
+    font-size: 1.5rem;
+    color: var(--clr-nebular-purple-600);
     transition: 0.3s;
+    
 
 }
 
@@ -271,6 +302,7 @@ header{
   .hero{
     display:block;
     flex-direction: column;
+    margin-bottom: 20vh; 
   }
 
   .wizzy-hero{
@@ -284,7 +316,9 @@ header{
   }
 
   .hero-text-container{
+    margin: -3%;
     margin-bottom: 0px;  
+    
   }
 
   .top-nav a{
@@ -295,6 +329,12 @@ header{
 
   .hamburger-icon{
     display: block;
+  }
+
+  button{
+    width:66%;
+    
+
   }
 
 }
@@ -334,12 +374,14 @@ header{
 }
 
 .section-header h1{
-  padding-top:0px;;
+  padding-top:0px;
   font-size: 2.5rem;
+  scroll-margin-top: 12rem;
 }
 
 .enemy-grid{
   margin-top:0px;
+  margin:0.25rem;
 }
 
 .enemy-card {
@@ -353,6 +395,7 @@ header{
   background-color: rgb(0, 100, 45);
   background: var(--card-bg-gradient);
   border-radius: var(--border_radius);
+  outline: 1px solid var(--clr-card-outline);
 }
 
 .enemy-card h4{
@@ -377,6 +420,7 @@ header{
   margin-bottom:0px;
   border-radius: var(--border_radius);
   padding:0.25rem;
+  outline: 1px solid var(--clr-card-outline);
 }
 
 .enemy-image {
@@ -391,6 +435,7 @@ header{
   background-color:rgb(0, 0, 0); 
   border-radius: var(--border_radius);
   border: 2px black solid;
+  outline: 1px solid var(--clr-card-outline);
 } 
 
 .bullet-image {
@@ -405,6 +450,7 @@ header{
   background-color:rgb(0, 0, 0); 
   border-radius: var(--border_radius);
   border: 2px black solid;
+  outline: 1px solid var(--clr-card-outline);
 }
 
 .enemy-name {
@@ -436,8 +482,6 @@ header{
   margin: .5rem;
 }
 
-
-
 .enemy-desrciption{
   grid-column-start: 4;
   grid-column-end: 10;
@@ -447,6 +491,7 @@ header{
   margin: 0.5rem;
   border-radius: var(--border_radius);
   padding:0.25rem;
+  outline: 1px solid var(--clr-card-outline);
 }
 
 @media screen and (max-width: 700px) {
@@ -454,12 +499,8 @@ header{
     background: var(--card-bg-gradient);
     padding: 0.25rem;
     margin: 0.25rem;
-    border-radius: 0%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-  }
-  .enemy-card div{
-    /*outline: 1px yellow dashed;*/
   }
 
   .enemy-image {
@@ -482,15 +523,15 @@ header{
   }
 
   .enemy-desrciption{
-  grid-column-start: 1;
-  grid-column-end: 10;
-  grid-row-start: 3;
-  grid-row-end: 5;
-  background-color: var(--clr-dark-green);
-  margin: 0.5rem;
-  border-radius: var(--border_radius);
-  padding:0.25rem;
-}
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    background-color: var(--clr-dark-green);
+    margin: 0.5rem;
+    border-radius: var(--border_radius);
+    padding:0.25rem;
+  }
 } 
 
 .mana-usage{
@@ -505,8 +546,24 @@ header{
   margin: .5rem;
 }
 
+@media screen and (max-width: 800px) {
+  .mana-usage{
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  text-align: left;
+  grid-column-start: 4;
+  grid-column-end: 10;
+  grid-row-start: 2;
+  grid-row-end: 3; 
+  margin: .5rem;
+  }
+}  
+
+
 .pickup-points{
   grid-column-start: 9;
+  grid-row-start: 1;
 }
 
 @media screen and (max-width: 800px) {
@@ -514,7 +571,6 @@ header{
     background: var(--card-bg-gradient);
     padding: 0.25rem;
     margin: 0.25rem;
-    border-radius: 0%;
   }
 }  
 
@@ -527,25 +583,30 @@ header{
   width: 100%;
 }
 
+#enemies{scroll-margin-top: 20vh;}
+#guitars{scroll-margin-top: 20vh;}
+#masks{scroll-margin-top: 20vh;}
+#items{scroll-margin-top: 20vh;}
+#worldmap{scroll-margin-top: 20vh;}
 
-#enemies{
-scroll-margin-top: 12rem;
+@media screen and (max-width: 1100px){
+
+#enemies{scroll-margin-top: 22vh;}
+#guitars{scroll-margin-top: 22vh;}
+#masks{scroll-margin-top: 22vh;}
+#items{scroll-margin-top: 22vh;}
+#worldmap{scroll-margin-top: 22vh;}
 }
 
-#guitars{
-scroll-margin-top: 12rem;
-}
 
-#masks{
-scroll-margin-top: 12rem;
-}
+@media screen and (max-width: 800px){
 
-#items{
-scroll-margin-top: 12rem;
-}
+ #enemies{scroll-margin-top: 20vh;}
+#guitars{scroll-margin-top: 20vh;}
+#masks{scroll-margin-top: 20vh;}
+#items{scroll-margin-top: 20vh;}
+#worldmap{scroll-margin-top: 20vh;} 
 
-#worldmap{
-scroll-margin-top: 12rem;
 }
 
 /* WORLDMAP */
