@@ -162,13 +162,13 @@ export const markersData = [
 
   {
     id: 'astroid-void-1',
-    name: 'METEOR VOID',
+    name: 'BLOKORITE VOID',
     left: '37.75%',
     top: '20%',
     size: '',
     image: meteorvoid,
     leveldifficulty: 'MEDIUM',
-    leveldesc: `There are gnarly meteor showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
+    leveldesc: `There are gnarly BLOKORITE showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
     additionalData: '...',
   },
 
@@ -245,7 +245,7 @@ export const markersData = [
     size: '',
     image: digitemple1,
     leveldifficulty: 'EASY',
-    leveldesc: `The first level in the game. Even a drunken one-armed monkey could beat this one. Try and get to the secret area behind the electro barriers!`,
+    leveldesc: `The first level in the game. Even a drunk monkey could beat this one. Try and get to the secret area behind the electro barriers!`,
     additionalData: '...',
   },
 
@@ -381,7 +381,7 @@ export const markersData = [
     size: '',
     image: blokopolis1,
     leveldifficulty: 'MED',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `On the outskirts of Blokopolis, this level introduces a bunch of new enemies and obstacles including ORBITRONS, SENTINELS, SMART TURRETS, and large moving platforms.`,
     additionalData: '...',
   },
 
@@ -393,7 +393,7 @@ export const markersData = [
     size: '',
     image: blokohub,
     leveldifficulty: 'MED',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `This is a large level with vertical scrolling where you will likely encounter LASERBOTS for the first time. There's also a big secret to discover shortly after the checkpoint.`,
     additionalData: '...',
   },
 
@@ -405,7 +405,7 @@ export const markersData = [
     size: '',
     image: blokopolis2,
     leveldifficulty: 'MED',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `Another claustrophoic Blokopolis level with lots of bullets coming at you and huge crushing platforms to avoid. The level sometimes divides into two paths, one easier and one harder but with more goodies.`,
     additionalData: '...',
   },
 
@@ -416,8 +416,8 @@ export const markersData = [
     top: '52.5%',
     size: '',
     image: blokopolis3,
-    leveldifficulty: 'MED',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldifficulty: 'HARD',
+    leveldesc: `Watch out for SENTINELS guarding various parts of this level, sometimes it's smarter to just sneak by them. You will also encounter the dreaded QUANTOID enemies at the end.`,
     additionalData: '...',
   },
 
@@ -429,7 +429,7 @@ export const markersData = [
     size: 'large',
     image: fractopolis1,
     leveldifficulty: 'HARD',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `This is a mind melting level where all of the platforms move and wrap through the edges of the screen.`,
     additionalData: '...',
   },
 
@@ -441,7 +441,7 @@ export const markersData = [
     size: 'large',
     image: fractoplex,
     leveldifficulty: 'EXTREME',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `Another level where all of the platforms are constantly moving and wrapping through the screen, but with more spikes. If that wasn't bad enough you will also encounter EXECUTORS here too.`,
     additionalData: '...',
   },
 
@@ -453,7 +453,7 @@ export const markersData = [
     size: '',
     image: blokoplex,
     leveldifficulty: 'EXTREME',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `It's best to stock up on powerups before venturing into this level. You will encounter lots of QUANTOIDS and several EXECUTORS here.`,
     additionalData: '...',
   },
 
@@ -465,7 +465,7 @@ export const markersData = [
     size: 'large',
     image: nucleus,
     leveldifficulty: 'BOSS',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `This boss is protected by a ring of ORBITRONS which spray extreme amounts of bullets. PRO TIP: Try letting the bullets come at you and then wrap through the screen to safety. `,
     additionalData: '...',
   },
 
@@ -507,13 +507,13 @@ export const markersData = [
 
   {
     id: 'astroid-void-2',
-    name: 'METEOR VOID',
+    name: 'BLOKORITE VOID',
     left: '30%',
     top: '64.5%',
     size: '',
     image: meteorvoid,
     leveldifficulty: 'MEDIUM',
-    leveldesc: `There are gnarly meteor showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
+    leveldesc: `There are gnarly BLOKORITE showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
     additionalData: '...',
   },
 
@@ -582,13 +582,13 @@ export const markersData = [
 
   {
     id: 'asteroid-void-3',
-    name: 'METEOR VOID',
+    name: 'BLOKORITE VOID',
     left: '64%',
     top: '31.5%',
     size: '',
     image: meteorvoid,
     leveldifficulty: 'MED',
-    leveldesc: `There are gnarly meteor showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
+    leveldesc: `There are gnarly BLOKORITE showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
     additionalData: '...',
   },
 
