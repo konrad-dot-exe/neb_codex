@@ -36,22 +36,22 @@ import smart_turret from './assets/smart_turret.png'
 
 // GUITARS
 
-import guitar_rapid from './assets/Guitar_Rapid.png'
+import guitar_rapid from './assets/guitar_red_mobile.png'
 import bullet_rapid from './assets/bullet_rapid.png'
 
-import guitar_spread from './assets/Guitar_Spread.png'
+import guitar_spread from './assets/guitar_yellow_mobile.png'
 import bullet_spread from './assets/bullet_spread.png'
 
-import guitar_sonic from './assets/Guitar_Sonic.png'
+import guitar_sonic from './assets/guitar_purple_mobile.png'
 import bullet_sonic from './assets/bullet_sonic.png'
 
-import guitar_helix from './assets/Guitar_Helix.png'
+import guitar_helix from './assets/guitar_blue_mobile.png'
 import bullet_helix from './assets/bullet_helix.png'
 
-import guitar_electro from './assets/Guitar_Electro.png'
+import guitar_electro from './assets/guitar_cyan_mobile.png'
 import bullet_electro from './assets/bullet_electro.png'
 
-import guitar_laser from './assets/Guitar_Laser.png'
+import guitar_laser from './assets/guitar_green_mobile.png'
 import bullet_laser from './assets/bullet_laser.png'
 
 // MASKS
@@ -787,17 +787,17 @@ desc: "This turret tracks you and attempts to anticipate your position - it’s 
 
 export const guitarData = [
 
-  { id: 1, image: guitar_rapid, bulletImage: bullet_rapid, name: "RAPID", dmg: "1", rate: "4", ammo: "24", 
+  { id: "rapid", image: guitar_rapid, bulletImage: bullet_rapid, name: "RAPID", dmg: "1", rate: "4", ammo: "24", 
 desc: "Standard-issue rapid-fire guitar. It fires your default bullets at a quicker rate."},
-{ id: 2, image: guitar_spread, bulletImage: bullet_spread, name: "SPREAD", dmg: "1x3", rate: "2", ammo: "20", 
+{ id: "spread", image: guitar_spread, bulletImage: bullet_spread, name: "SPREAD", dmg: "1x3", rate: "2", ammo: "20", 
 desc: "A favorite guitar of people who don’t like aiming, it fires three default bullets at once in a spread formation. "},
-{ id: 3, image: guitar_sonic, bulletImage: bullet_sonic, name: "SONIC", dmg: "2", rate: "2", ammo: "16", 
+{ id: "sonic", image: guitar_sonic, bulletImage: bullet_sonic, name: "SONIC", dmg: "2", rate: "2", ammo: "16", 
 desc: "Fires a wave of large slow moving bullets that can blast through groups of smaller enemies. Sonic bullets lose power the further they travel."},
-{ id: 4, image: guitar_helix, bulletImage: bullet_helix, name: "HELIX", dmg: "2*", rate: "2", ammo: "16", 
+{ id: "helix", image: guitar_helix, bulletImage: bullet_helix, name: "HELIX", dmg: "2*", rate: "2", ammo: "16", 
 desc: "Launches a fast moving bullet orbited by two smaller bullets. * Orbiter bullets do an additional 1 damage each."},
-{ id: 5, image: guitar_electro, bulletImage: bullet_electro, name: "ELECTRO", dmg: "3*", rate: "1.5", ammo: "12", 
+{ id: "electro", image: guitar_electro, bulletImage: bullet_electro, name: "ELECTRO", dmg: "3*", rate: "1.5", ammo: "12", 
 desc: "Electro bullets create explosions on impact. Great for blasting groups. * Explosions deal up to 2 additional splash damage."},
-{ id: 6, image: guitar_laser, bulletImage: bullet_laser, name: "LASER", dmg: "4", rate: "1", ammo: "10", 
+{ id: "laser", image: guitar_laser, bulletImage: bullet_laser, name: "LASER", dmg: "4", rate: "1", ammo: "10", 
 desc: "The laser instaneously deals massive damage to anything in its path. The best weapon for dealing with tougher enemies."},
 
 ];

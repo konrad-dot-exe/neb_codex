@@ -99,7 +99,7 @@ header{
 }
 
 .hero-text-container{
-  margin: 4%;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,7 +160,7 @@ header{
   min-width: 320px;
   min-height: 12vh;
   flex-direction:column;
-  right: -100vw;
+  right: -100%;
   background: var(--card-bg-gradient);
   background-repeat: repeat;
   border-radius: var(--border_radius);
@@ -193,7 +193,6 @@ header{
 
 .infocard-description p{
   margin: 1rem;
-
 }
 
 .hard{
@@ -353,6 +352,8 @@ header{
   margin: 1rem;
 }
 
+
+
 @media only screen and (max-width: 1100px) {
   .grid{
     grid-template-columns: 100%;
@@ -496,11 +497,11 @@ header{
 
 @media screen and (max-width: 700px) {
   .enemy-card{
-    background: var(--card-bg-gradient);
+
     padding: 0.25rem;
     margin: 0.25rem;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 
   .enemy-image {
@@ -530,7 +531,7 @@ header{
     background-color: var(--clr-dark-green);
     margin: 0.5rem;
     border-radius: var(--border_radius);
-    padding:0.25rem;
+    padding:0.5rem;
   }
 } 
 
@@ -568,7 +569,6 @@ header{
 
 @media screen and (max-width: 800px) {
   .enemy-card{
-    background: var(--card-bg-gradient);
     padding: 0.25rem;
     margin: 0.25rem;
   }

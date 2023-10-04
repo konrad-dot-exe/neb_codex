@@ -14,7 +14,11 @@ import worldmap from './assets/Worldmap.jpg'
 import screenshot from './assets/screenshot.png'
 import wizzy from './assets/Wizzy3.gif'
 
+import guitar_rapid_alt from './assets/guitar_red_mobile.png'
+
 import {markersData} from './data'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -66,14 +70,39 @@ function App() {
 
       marker.addEventListener('mouseleave', function() {
           marker.style.opacity = "0%";
-          infocard.style.right= "-100vw";
+          infocard.style.right= "-100%";
       });
-
-    
 
     }
 
+      function setResponsiveImage() {
+        const image = document.getElementById('rapid');
+
+        console.log(image)
+
+        const matchMedia = window.matchMedia('(max-width: 800px)');
+
+        if (matchMedia.matches) {
+            image.src = ""; // set the source for small screens
+            image.style.opacity = "50%";
+            console.log("alt image = " + image.src);
+        } else {
+            
+            image.src = guitarData[0].image; // set the source for large screens
+            image.style.opacity = "100%";
+            console.log("default image = " + guitarData[0].image);
+        }
+
+    }
+
+
+    // Initial setup
+    //setResponsiveImage();
+
+    // Update the image source whenever the window is resized
+    //window.addEventListener('resize', setResponsiveImage);
  
+
 
   var shredonia = document.getElementById('shredonia');
   var warpgateYellow = document.getElementById('warpgate-yellow');
@@ -200,7 +229,7 @@ function App() {
           <button onClick={ () => window.location.href = "http://www.nebularcrush.com"}> What the heck is<br/>Nebular Crush? </button>
         
         </div>
-        <div className="hero-image-container"> <img className="wizzy-hero" src={wizzy}></img> </div>
+        <div className="hero-image-container"> <img className="wizzy-hero" id="wizzy-hero" src={wizzy}></img> </div>
       
       </div>
 
@@ -250,7 +279,7 @@ function App() {
           const{ id, image, bulletImage, name, dmg, rate, ammo, desc} = guitar;
           return(
           <div key={id} className="enemy-card">
-          <div className = "enemy-image"> <img src = {image}></img>  </div>
+          <div className = "enemy-image" id= {id}> <img src = {image}></img>  </div>
             
           <div className = "bullet-image"> <img src = {bulletImage}></img>  </div>
 
@@ -318,7 +347,7 @@ function App() {
        <div className="grid guitar-grid"> 
       
        {pickupData.map((pickup) => {
-          const{ id, image, name, pts, desc} = pickup;
+          const{ id, image, imageAlt, name, pts, desc} = pickup;
           return(
 
           <div key={id} className="enemy-card">
