@@ -811,6 +811,6 @@ desc: "This power-up slowly recharges your mana over time."},
   { id: 9, image: double_guitar, name: "DOUBLE GUITAR", pts: "96", 
 desc: "This power-up transforms your standard guitar into a two-necked guitar, increasing your firing rate."},
   { id: 10, image: cryptogem, name: "CRYPTOGEM", pts: "N/A", 
-desc: "You must collect all 5 cryptogems and return to the Cybergate to complete your quest."},
+desc: "You must collect all 5 cryptogems to unlock the Cybergate and complete your quest."},
 
 ];

@@ -66,12 +66,14 @@ function App() {
 
       marker.addEventListener('mouseleave', function() {
           marker.style.opacity = "0%";
-          
-
-          infocard.style.right= "-30%";
+          infocard.style.right= "-100vw";
       });
 
+    
+
     }
+
+ 
 
   var shredonia = document.getElementById('shredonia');
   var warpgateYellow = document.getElementById('warpgate-yellow');
@@ -186,8 +188,8 @@ function App() {
       <div className="black-rect">
       </div>
       
-      <header>
-        <h1>NEBULAR CODEX</h1>
+      <header >
+        <h1 >NEBULAR CODEX</h1>
       </header>
 
         <Navbar/>
@@ -196,6 +198,8 @@ function App() {
       
         <div className="hero-text-container" >
           <h2> Welcome to the <span className="hero-accent">Nebular Codex!</span> Here you can study all of the secrets of Nebular Crush and level up from noob-ular to nebular!</h2> 
+ 
+        
         </div>
         <div className="hero-image-container"> <img className="wizzy-hero" src={wizzy}></img> </div>
       
@@ -373,13 +377,6 @@ function App() {
             {/*... additional elements or attributes can be added based on the data in each marker object*/}
           </div>
         ))}
-
-        {/*
-
-       <div className="map-marker" id="warpgate-blue" style={{left: 45.5 + '%', top: 26.5 + '%'}} > <h4> BLUE WARPGATE </h4> </div>
-       <div className="map-marker" id="guitar-shrine-blue" style={{left: 51.5 + '%', top: 25.75 + '%'}} > <h4> BLUE GUITAR </h4> </div>
-
-       */}
 
        </div>
 
