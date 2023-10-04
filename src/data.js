@@ -20,6 +20,20 @@ import giant_virovore from './assets/virovore_giant.png'
 import quantoid from './assets/quantoid.png'
 import executor from './assets/executor.png'
 
+import cyklo from './assets/cyklo.png'
+import executey from './assets/executey.png'
+import mini_cyklo from './assets/mini_cyklo.png'
+import chippy from './assets/chippy.png'
+
+import oscillotron from './assets/oscillotron.png'
+import mega_chippy from './assets/mega_chippy.png'
+import mega_oscillotron from './assets/mega_oscillotron.png'
+import laserbot from './assets/laserbot.png'
+
+import turret from './assets/turret.png'
+import smart_turret from './assets/smart_turret.png'
+
+
 // GUITARS
 
 import guitar_rapid from './assets/Guitar_Rapid.png'
@@ -747,6 +761,29 @@ desc: "If you aren’t powered up, your best bet is to run or hide when you see 
 desc: "This thing teleports and hunts you relentlessly with homing bullets. Kill it before it kills you."},
   { id: 16, image: executor, name: "EXECUTOR", hp: "8", pts: "48", dngr: "XTR",
 desc: "You’ll need some serious firepower if you’re going to face down one of these. Watch out - its bullets create deadly explosions on impact."},
+
+{ id: 17, image: cyklo, name: "CYKLO", hp: "2", pts: "6", dngr: "LOW",
+desc: "Bounces around diagonally. Watch out, there’s usually more than one."},
+  { id: 18, image: executey, name: "EXECUTEY", hp: "4", pts: "24", dngr: "HI",
+desc: "Fun-size version of the fearsome Executor. It’s still pretty dangerous."},
+   { id: 19, image: mini_cyklo, name: "MINI CYKLO", hp: "1", pts: "3", dngr: "LOW",
+desc: "It’s a bouncing baby Cyklo. Not as cute when there’s a swarm of ‘em."},
+  { id: 20, image: chippy, name: "CHIPPY", hp: "2", pts: "8", dngr: "MED",
+desc: "They move vertically, attach to blocks, and fire bullets.        "},
+
+{ id: 21, image: oscillotron, name: "OSCILLOTRON", hp: "2", pts: "8", dngr: "MED",
+desc: "Their unpredictable movements make these guys tricky to deal with."},
+  { id: 22, image: mega_chippy, name: "MEGACHIPPY", hp: "5", pts: "16", dngr: "HI",
+desc: "It’s a Chippy, but bigger."},
+{ id: 23, image: mega_oscillotron, name: "MEGA OSCILLOTRON", hp: "3", pts: "16", dngr: "HI",
+desc: "Tougher and more aggressive than their smaller counterparts. "},
+  { id: 24, image: laserbot, name: "LASERBOT", hp: "2", pts: "8", dngr: "MED",
+desc: "They link with other Laserbots to form laser barriers."},
+   
+{ id: 25, image: turret, name: "TURRET", hp: "3", pts: "6", dngr: "LOW",
+desc: "This standard block-mounted turret fires fast moving bullets at a fixed rate."},
+  { id: 26, image: smart_turret, name: "SMART TURRET", hp: "3", pts: "8", dngr: "MED",
+desc: "This turret tracks you and attempts to anticipate your position - it’s called smart for a reason."},
 
 ];
 
