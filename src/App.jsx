@@ -278,12 +278,12 @@ function App() {
        {guitarData.map((guitar) => {
           const{ id, image, bulletImage, name, dmg, rate, ammo, desc} = guitar;
           return(
-          <div key={id} className="enemy-card">
-          <div className = "enemy-image" id= {id}> <img src = {image}></img>  </div>
+          <div key={id} className="enemy-card guitar-card">
+          <div className = "enemy-image guitar-image"  id= {id}> <img src = {image} ></img>  </div>
             
           <div className = "bullet-image"> <img src = {bulletImage}></img>  </div>
 
-          <div className = "guitar-name"> 
+          <div className = " enemy-name guitar-name"> 
             <div className="label"> <h4> NAME: </h4> </div>
             <div className="name"> <h4> {name} </h4> </div>
           
@@ -351,7 +351,7 @@ function App() {
           return(
 
           <div key={id} className="enemy-card">
-          <div className = "enemy-image"> <img src = {image}></img>  </div>
+          <div className = "enemy-image "> <img src = {image}></img>  </div>
 
           <div className = "enemy-name"> 
             <div className="label"> <h4> NAME: </h4> </div>
