@@ -21,9 +21,20 @@ import {markersData} from './data'
 function App() {
   const [count, setCount] = useState(0)
 
-  //useEffect(() => {
-  //  magnify("myimage", 3);
-  //}, []);  // The empty array means this useEffect runs once after initial render
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   const map = document.getElementById('imgContainer');
+  //   let zoomLevel = 100;
+
+  //   document.getElementById('zoom-in').addEventListener('click', () => {
+  //     zoomLevel += 10; // You can adjust the zoom step as needed
+  //     map.style.width = `${zoomLevel}%`;
+  //   });
+
+  //   document.getElementById('zoom-out').addEventListener('click', () => {
+  //     zoomLevel = Math.max(100, zoomLevel - 10); // Prevent zooming out beyond the original size
+  //     map.style.width = `${zoomLevel}%`;
+  //   });
+  // });
 
   window.onload = (event) => {
     
@@ -370,19 +381,22 @@ function App() {
        <div className="section-header" id="worldmap"><h1>WORLD MAP</h1></div>
 
        <div className="map-infocard" id="map-infocard">
-        <h2 className="infocard-name" id="infocard-name">SHREDONIA</h2>
-        <img  src={screenshot} className="infocard-image" id="infocard-image"/>
-        <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
-        <div className="infocard-description" ><p id="infocard-description"> This level is a totally mysterious enigma.</p></div>
-
+          <h2 className="infocard-name" id="infocard-name">SHREDONIA</h2>
+          <img  src={screenshot} className="infocard-image" id="infocard-image"/>
+          <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
+          <div className="infocard-description" ><p id="infocard-description"> This level is a totally mysterious enigma.</p></div>
       </div>
+       
+       {/* <div className="map-container" id="map-container">
+       <div className="img-magnifier-container" id="imgContainer">
+        <img src={worldmap} alt="World Map" className="world-map" id="map"/>
+        <button className="map-marker" style={{top: '11.75%', left: '37.75%'}} ></button>
+        </div>
+      </div> */}
 
        <div className="map-container">
-        <div className="img-magnifier-container" id="imgContainer">
+        <div className="img-magnifier-container" id="imgContainer" >
           <img id="myimage" src={worldmap} width="100%"/>
-        </div>
-
-    
         {markersData.map(marker => (
           <div 
             key={marker.id}
@@ -397,16 +411,21 @@ function App() {
             <h4>{marker.name}</h4>
           </div>
         ))}
+        
+        
+        
+        </div>
 
+        
        </div>
+
+       {/* <button id="zoom-in">Zoom In</button>
+      <button id="zoom-out">Zoom Out</button> */}
 
     </>
 
   )
 
-
 }
-
-
 
 export default App
