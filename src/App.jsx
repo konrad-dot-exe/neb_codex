@@ -18,8 +18,6 @@ import guitar_rapid_alt from './assets/guitar_red_mobile.png'
 
 import {markersData} from './data'
 
-
-
 function App() {
   const [count, setCount] = useState(0)
 
@@ -95,13 +93,11 @@ function App() {
 
     }
 
-
     // Initial setup
     //setResponsiveImage();
 
     // Update the image source whenever the window is resized
     //window.addEventListener('resize', setResponsiveImage);
- 
 
 
   var shredonia = document.getElementById('shredonia');
@@ -215,7 +211,6 @@ function App() {
   return (
     <>
       
-      
       <header >
         <a href ="#"><h1>NEBULAR CODEX</h1></a>
       </header>
@@ -232,7 +227,6 @@ function App() {
         <div className="hero-image-container"> <img className="wizzy-hero" id="wizzy-hero" src={wizzy}></img> </div>
       
       </div>
-
 
       <div className="section-header" id="enemies"><h1>ENEMIES</h1></div>
 
@@ -308,7 +302,6 @@ function App() {
             );
        })}
     
-
       </div>
 
        <div className="section-header" id="masks"><h1>MASKS</h1></div>
@@ -402,7 +395,6 @@ function App() {
             leveldesc = {marker.leveldesc}
           >
             <h4>{marker.name}</h4>
-            {/*... additional elements or attributes can be added based on the data in each marker object*/}
           </div>
         ))}
 
