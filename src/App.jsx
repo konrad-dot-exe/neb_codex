@@ -32,7 +32,7 @@ useEffect(() => {
   let maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
 
   // Store the initial zoom level.
-  let zoomLevel = 150;
+  let zoomLevel = 70;
   let maxZoomOutLevel = 70;
 
 
@@ -50,7 +50,7 @@ useEffect(() => {
 
       }else{
         maxZoomOutLevel = 70;
-        zoomLevel = 150;
+        zoomLevel = 70;
         if (zoomLevel < maxZoomOutLevel){
           zoomLevel = maxZoomOutLevel;
         }
