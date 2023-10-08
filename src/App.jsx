@@ -19,24 +19,182 @@ import guitar_rapid_alt from './assets/guitar_red_mobile.png'
 import {markersData} from './data'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  // document.addEventListener('DOMContentLoaded', () => {
-  //   const map = document.getElementById('imgContainer');
-  //   let zoomLevel = 100;
+useEffect(() => {
+  
+  console.log('Component is mounted, DOM is loaded');
 
-  //   document.getElementById('zoom-in').addEventListener('click', () => {
-  //     zoomLevel += 10; // You can adjust the zoom step as needed
-  //     map.style.width = `${zoomLevel}%`;
-  //   });
+  const mapContainer = document.getElementById('map-container');
+  const map = document.getElementById('imgContainer');
+  
+  // Calculate the maximum possible scroll values
+  let maxScrollLeft = mapContainer.scrollWidth - mapContainer.clientWidth;
+  let maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
 
-  //   document.getElementById('zoom-out').addEventListener('click', () => {
-  //     zoomLevel = Math.max(100, zoomLevel - 10); // Prevent zooming out beyond the original size
-  //     map.style.width = `${zoomLevel}%`;
-  //   });
-  // });
+  // Store the initial zoom level.
+  let zoomLevel = 150;
+  let maxZoomOutLevel = 70;
 
-  window.onload = (event) => {
+
+  // Function to update max scroll values
+  function updateMaxScrollValues() {
+      maxScrollLeft = mapContainer.scrollWidth - mapContainer.clientWidth;
+      maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
+
+      if (window.matchMedia('(max-width: 700px)').matches) {
+        maxZoomOutLevel = 250;
+        zoomLevel = 250;
+        if (zoomLevel < maxZoomOutLevel){
+          zoomLevel = maxZoomOutLevel;
+        }
+
+      }else{
+        maxZoomOutLevel = 70;
+        zoomLevel = 150;
+        if (zoomLevel < maxZoomOutLevel){
+          zoomLevel = maxZoomOutLevel;
+        }
+      }
+
+      map.style.width = `${zoomLevel}%`;
+    
+    }
+
+  // Function to update current scroll values
+  function updateCurrentScrollValues() {
+      maxScrollLeft = mapContainer.scrollWidth - mapContainer.clientWidth;
+      maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
+  }
+
+  // Update them on window resize
+  window.addEventListener('resize', updateMaxScrollValues);
+    // Update them on window resize
+  mapContainer.addEventListener('mouseover', updateCurrentScrollValues);
+
+  let scrollLeftPercentage = (mapContainer.scrollLeft / maxScrollLeft) * 100;
+  let scrollTopPercentage = (mapContainer.scrollTop / maxScrollTop) * 100;
+
+    // Initial calculation
+  updateMaxScrollValues();
+
+  // for some reason I need to delay height calculation...
+  setTimeout(()=>{
+
+    // Initial calculation
+    updateMaxScrollValues();
+
+    // calculate 50% of the content's width and height
+    mapContainer.scrollLeft = mapContainer.scrollWidth * 0.5 - mapContainer.clientWidth * 0.5;
+    mapContainer.scrollTop = mapContainer.scrollHeight * 0.5 - mapContainer.clientHeight * 0.5;
+
+  }, 250); 
+
+// ZOOMING
+
+if (window.matchMedia('(max-width: 700px)').matches) {
+  zoomLevel = 250;
+  maxZoomOutLevel = 250;
+}else{
+  zoomLevel = 150;
+  maxZoomOutLevel = 70;
+}
+
+// This event listener is triggered when the element with id 'zoom-in' is clicked.
+document.getElementById('zoom-in').addEventListener('click', () => {
+  
+  // Record the center of the current view.
+    const centerX = (mapContainer.scrollLeft + mapContainer.clientWidth / 2) / mapContainer.scrollWidth;
+    const centerY = (mapContainer.scrollTop + mapContainer.clientHeight / 2) / mapContainer.scrollHeight;
+
+    // Increase the zoom level.
+    zoomLevel += 10;
+    console.log("zoom level =" + zoomLevel);
+
+    // Apply the new zoom level.
+    map.style.width = `${zoomLevel}%`;
+
+    // Update the scroll position to keep the view centered.
+    mapContainer.scrollLeft = centerX * mapContainer.scrollWidth - mapContainer.clientWidth / 2;
+    mapContainer.scrollTop = centerY * mapContainer.scrollHeight - mapContainer.clientHeight / 2;
+});
+
+// This event listener is triggered when the element with id 'zoom-out' is clicked.
+document.getElementById('zoom-out').addEventListener('click', () => {
+  
+  // Prevent zooming out past the original size.
+    if (zoomLevel <= maxZoomOutLevel) return;
+
+    // Record the center of the current view.
+    const centerX = (mapContainer.scrollLeft + mapContainer.clientWidth / 2) / mapContainer.scrollWidth;
+    const centerY = (mapContainer.scrollTop + mapContainer.clientHeight / 2) / mapContainer.scrollHeight;
+
+    // Decrease the zoom level.
+    zoomLevel -= 10;
+    console.log("zoom level =" + zoomLevel);
+
+    // Apply the new zoom level.
+    map.style.width = `${zoomLevel}%`;
+
+    // Update the scroll position to keep the view centered.
+    mapContainer.scrollLeft = centerX * mapContainer.scrollWidth - mapContainer.clientWidth / 2;
+    mapContainer.scrollTop = centerY * mapContainer.scrollHeight - mapContainer.clientHeight / 2;
+});
+    
+    // debug
+  setInterval(() => {
+      
+    // Calculate the maximum possible scroll values
+    let maxScrollLeft = mapContainer.scrollWidth - mapContainer.clientWidth;
+    let maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
+
+    // Calculate scrollLeftPercentage and handle division by zero
+    if (maxScrollLeft === 0) {
+        scrollLeftPercentage = 0;
+    } else {
+        scrollLeftPercentage = (mapContainer.scrollLeft / maxScrollLeft) * 100;
+    }
+
+    // Calculate scrollTopPercentage and handle division by zero
+    if (maxScrollTop === 0) {
+        scrollTopPercentage = 0;
+    } else {
+        scrollTopPercentage = (mapContainer.scrollTop / maxScrollTop) * 100;
+    }
+
+    // Additional checks to handle NaN values
+    if (isNaN(scrollLeftPercentage)) {
+        scrollLeftPercentage = 0;
+    }
+
+    if (isNaN(scrollTopPercentage)) {
+        scrollTopPercentage = 0;
+    }
+
+    console.log("scrollLeft% =", scrollLeftPercentage);
+    console.log("scrollTop% =", scrollTopPercentage);
+
+      // updateMaxScrollValues();
+      // scrollLeftPercentage = (mapContainer.scrollLeft / maxScrollLeft) * 100;
+      // scrollTopPercentage = (mapContainer.scrollTop / maxScrollTop) * 100;
+
+      // Log the individual values to understand what’s happening
+      // console.log('maxScrollTop:', maxScrollTop);
+      // console.log('mapContainer.scrollTop:', mapContainer.scrollTop);
+      // console.log('mapContainer.scrollHeight:', mapContainer.scrollHeight);
+      // console.log('mapContainer.clientHeight:', mapContainer.clientHeight);
+      
+      //  console.log('maxScrollLeft:', maxScrollLeft);
+      //  console.log('mapContainer.scrollLeft:', mapContainer.scrollLeft);
+      //  console.log('mapContainer.scrollWidth:', mapContainer.scrollWidth);
+      //  console.log('mapContainer.clientWidth:', mapContainer.clientWidth);
+
+  }, 1000);  
+
+
+});
+ 
+  
+window.onload = (event) => {
     
     function setMarker(marker){
     
@@ -103,13 +261,6 @@ function App() {
         }
 
     }
-
-    // Initial setup
-    //setResponsiveImage();
-
-    // Update the image source whenever the window is resized
-    //window.addEventListener('resize', setResponsiveImage);
-
 
   var shredonia = document.getElementById('shredonia');
   var warpgateYellow = document.getElementById('warpgate-yellow');
@@ -386,42 +537,39 @@ function App() {
           <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
           <div className="infocard-description" ><p id="infocard-description"> This level is a totally mysterious enigma.</p></div>
       </div>
-       
-       {/* <div className="map-container" id="map-container">
-       <div className="img-magnifier-container" id="imgContainer">
-        <img src={worldmap} alt="World Map" className="world-map" id="map"/>
-        <button className="map-marker" style={{top: '11.75%', left: '37.75%'}} ></button>
-        </div>
-      </div> */}
 
-       <div className="map-container">
+       <div className="map-app-container">
+
+       <div className="map-container" id="map-container">
         <div className="img-magnifier-container" id="imgContainer" >
           <img id="myimage" src={worldmap} width="100%"/>
-        {markersData.map(marker => (
-          <div 
-            key={marker.id}
-            className={`map-marker ${marker.size}`} 
-            id={marker.id} 
-            levelname={marker.name} 
-            style={{ left: marker.left, top: marker.top }}
-            image= {marker.image}
-            leveldifficulty = {marker.leveldifficulty}
-            leveldesc = {marker.leveldesc}
-          >
-            <h4>{marker.name}</h4>
-          </div>
-        ))}
-        
-        
-        
+          {markersData.map(marker => (
+            <div 
+              key={marker.id}
+              className={`map-marker ${marker.size}`} 
+              id={marker.id} 
+              levelname={marker.name} 
+              style={{ left: marker.left, top: marker.top }}
+              image= {marker.image}
+              leveldifficulty = {marker.leveldifficulty}
+              leveldesc = {marker.leveldesc}
+            >
+              <h4>{marker.name}</h4>
+            </div>
+          ))}
+      
         </div>
 
-        
+        </div>
+
+          <div className="map-control-container">
+            <button id="zoom-in" >+</button>
+            <button id="zoom-out" >-</button>
+          </div>
        </div>
 
-       {/* <button id="zoom-in">Zoom In</button>
-      <button id="zoom-out">Zoom Out</button> */}
-
+       {/* onClick={() => console.log('BUTTON CLICK')} */}
+       
     </>
 
   )

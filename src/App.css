@@ -61,7 +61,7 @@ header{
   justify-content: center;
   min-width: 320px;
   min-height: 6vh;
-  max-height: 10vh;
+  max-height: 8vh;
   color: var(--clr-nebular-purple-400); 
   /*outline: 1px dashed red;*/
   flex-direction:column;
@@ -152,7 +152,7 @@ header{
   z-index: 3;
   display: flex;
   position: fixed;
-  top: 18vh;
+  top: 15.25vh;
 
   width: 20%;
   margin: 8px;
@@ -203,7 +203,7 @@ header{
   z-index: 5;
   display: flex;
   position: fixed;
-  top: 12vh;
+  top: 9.5vh;
   left: 0;
   right: 0;
   margin: 8px;
@@ -521,6 +521,157 @@ header{
 
 
 
+@media screen and (max-width: 400px) {
+
+.guitar-card{
+    grid-template-columns: 10fr 10fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.pickup-points{
+  grid-column-start: 9;
+  grid-row-start: 1;
+}
+
+
+.map-container{
+  min-width: 320px;
+  min-height: 6vh; 
+}
+
+.map{
+  width: 100%;
+}
+
+#enemies{scroll-margin-top: 20vh;}
+#guitars{scroll-margin-top: 20vh;}
+#masks{scroll-margin-top: 20vh;}
+#items{scroll-margin-top: 20vh;}
+#worldmap{scroll-margin-top: 20vh;}
+
+@media screen and (max-width: 1100px){
+
+  #enemies{scroll-margin-top: 22vh;}
+  #guitars{scroll-margin-top: 22vh;}
+  #masks{scroll-margin-top: 22vh;}
+  #items{scroll-margin-top: 22vh;}
+  #worldmap{scroll-margin-top: 22vh;}
+}
+
+
+@media screen and (max-width: 800px){
+
+  #enemies{scroll-margin-top: 20vh;}
+  #guitars{scroll-margin-top: 20vh;}
+  #masks{scroll-margin-top: 20vh;}
+  #items{scroll-margin-top: 20vh;}
+  #worldmap{scroll-margin-top: 20vh;} 
+
+}
+
+/* WORLDMAP */
+
+.world-map {
+  width:100%;
+  z-index: -2;
+}
+
+#map {
+  transition: all 0.3s ease-in-out;
+   width: 100%;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 80%; /* Adjust as needed */
+  max-height: 600px; /* Adjust as needed */
+  overflow: scroll; 
+  border: 1px solid #ccc; /* Optional, for better visibility */
+  margin: auto;
+}
+
+ .img-magnifier-container {
+  transition: opacity 0.5s;
+  width:150%;
+  height:150%;
+  position:relative;
+  margin:auto;
+  display:flex;
+} 
+
+/* .img-magnifier-glass {
+  transition: opacity 0.5s;
+  position: absolute;
+  border-radius: 50%;
+  cursor: none;
+  width: 400px;
+  height: 400px;
+  transform: translateZ(0);
+  will-change: transform;
+  opacity:0%;
+} */
+
+ .map-marker{
+  position: absolute;
+  border-radius: 50%;
+  outline: 1px dashed aqua; 
+  z-index: 1;
+  width: 3%;
+  height: 3%;
+  transition: 0.6s;
+  display:flex;
+  justify-content: center;
+   opacity: 0%; 
+} 
+
+.map-marker h4{
+  color: white;
+  font-size: 1vw;
+  font-weight:100;
+  line-height: 1rem;
+  position: absolute;
+  top:-280%;
+  text-align: center;
+  text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+  pointer-events: none; 
+}
+
+.large h4{
+  top:-380%;
+}
+
+.map-control-container{
+  position:absolute;
+  width: 5%;
+  max-width: 48px;
+  display: flex;
+  flex-direction: column;
+  left: 11%;
+  top: 3%;
+  
+}
+
+.map-control-container button{
+  position:relative;
+  z-index:7;
+  margin: 10%;
+  background-color:#ffffff;
+  color: var(--clr-nebular-purple-200);
+  opacity: 75%;
+}
+
+.map-control-container button:hover{
+  background-color:#ffffff;
+  opacity: 100%;
+}
+
+.map-app-container{
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
 @media screen and (max-width: 700px) {
 
   header{
@@ -611,128 +762,28 @@ header{
     grid-row-end: 3; 
   }
 
-}
-
-@media screen and (max-width: 400px) {
-
-.guitar-card{
-    grid-template-columns: 10fr 10fr 1fr 1fr 1fr 1fr;
+  .map-control-container{
+    position:relative;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    max-width: 400px;
+    left:0px;
+    top: 0px;
   }
-}
+  
+  .map-control-container button{
+    margin: 7.5%;
+  }
 
-.pickup-points{
-  grid-column-start: 9;
-  grid-row-start: 1;
-}
+  .img-magnifier-container {
 
+    width:250%;
+    height:250%;
 
-.map-container{
-  min-width: 320px;
-  min-height: 6vh; 
-}
+  } 
 
-.map{
-  width: 100%;
-}
-
-#enemies{scroll-margin-top: 20vh;}
-#guitars{scroll-margin-top: 20vh;}
-#masks{scroll-margin-top: 20vh;}
-#items{scroll-margin-top: 20vh;}
-#worldmap{scroll-margin-top: 20vh;}
-
-@media screen and (max-width: 1100px){
-
-  #enemies{scroll-margin-top: 22vh;}
-  #guitars{scroll-margin-top: 22vh;}
-  #masks{scroll-margin-top: 22vh;}
-  #items{scroll-margin-top: 22vh;}
-  #worldmap{scroll-margin-top: 22vh;}
-}
-
-
-@media screen and (max-width: 800px){
-
-  #enemies{scroll-margin-top: 20vh;}
-  #guitars{scroll-margin-top: 20vh;}
-  #masks{scroll-margin-top: 20vh;}
-  #items{scroll-margin-top: 20vh;}
-  #worldmap{scroll-margin-top: 20vh;} 
 
 }
-
-/* WORLDMAP */
-
-.world-map {
-  width:100%;
-  z-index: -2;
-}
-
-#map {
-  transition: all 0.3s ease-in-out;
-   width: 100%;
-}
-
-.map-container {
-  position: relative;
-  width: 100%;
-  max-width: 80%; /* Adjust as needed */
-  max-height: 600px; /* Adjust as needed */
-  overflow: scroll; 
-  border: 1px solid #ccc; /* Optional, for better visibility */
-  margin: auto;
-}
-
- .img-magnifier-container {
-  transition: opacity 0.5s;
-  width:200%;
-  height:200%;
-  position:relative;
-  margin:auto;
-  display:flex;
-} 
-
-/* .img-magnifier-glass {
-  transition: opacity 0.5s;
-  position: absolute;
-  border-radius: 50%;
-  cursor: none;
-  width: 400px;
-  height: 400px;
-  transform: translateZ(0);
-  will-change: transform;
-  opacity:0%;
-} */
-
- .map-marker{
-  position: absolute;
-  border-radius: 50%;
-  outline: 1px dashed aqua; 
-  z-index: 1;
-  width: 3%;
-  height: 3%;
-  transition: 0.6s;
-  display:flex;
-  justify-content: center;
-   opacity: 0%; 
-} 
-
-.map-marker h4{
-  color: white;
-  font-size: 1vw;
-  font-weight:100;
-  line-height: 1rem;
-  position: absolute;
-  top:-280%;
-  text-align: center;
-  text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
-  pointer-events: none; 
-}
-
-.large h4{
-  top:-380%;
-}
-
-
-
 
