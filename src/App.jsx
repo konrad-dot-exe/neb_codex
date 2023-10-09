@@ -214,6 +214,10 @@ window.onload = (event) => {
             }
           }
 
+          const map = document.getElementById('imgContainer');
+
+          map.style.display = "none";
+
           let levelName = marker.getAttribute('levelname');
           let levelDesc = marker.getAttribute('leveldesc');
           let levelDifficulty = marker.getAttribute('leveldifficulty');
