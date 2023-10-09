@@ -254,6 +254,11 @@ window.onload = (event) => {
       marker.addEventListener('mouseenter', (event) => {
         showInfoCard(event, "mouse");
       });
+
+      marker.addEventListener('touchstart', (event) => {
+        showInfoCard(event, "tap");
+      });
+
        marker.addEventListener('click', (event) => {
         showInfoCard(event, "tap");
       });
@@ -261,7 +266,12 @@ window.onload = (event) => {
       marker.addEventListener('mouseleave', (event) => {
         hideInfoCard(event, "mouse");
       });
+
        infocardOK.addEventListener('click', (event) => {
+        hideInfoCard(event, "tap");
+      });
+
+      infocardOK.addEventListener('touchstart', (event) => {
         hideInfoCard(event, "tap");
       });
 
