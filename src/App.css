@@ -195,6 +195,11 @@ header{
   margin: 1rem;
 }
 
+.infocard-description a{
+  font-weight: 800;
+  color: var(--clr-nebular-purple-600);
+}
+
 .hard{
   color:red;
 }
@@ -329,6 +334,7 @@ header{
   background: var(--card-bg-gradient);
   border-radius: var(--border_radius);
   outline: 1px solid var(--clr-card-outline);
+  scroll-margin-top: 17.25vh;
 }
 
 .enemy-card h4{
@@ -519,8 +525,6 @@ header{
 
 }
 
-
-
 @media screen and (max-width: 400px) {
 
 .guitar-card{
@@ -550,7 +554,6 @@ header{
 #worldmap{scroll-margin-top: 20vh;}
 
 @media screen and (max-width: 1100px){
-
   #enemies{scroll-margin-top: 22vh;}
   #guitars{scroll-margin-top: 22vh;}
   #masks{scroll-margin-top: 22vh;}
@@ -558,15 +561,12 @@ header{
   #worldmap{scroll-margin-top: 22vh;}
 }
 
-
 @media screen and (max-width: 800px){
-
   #enemies{scroll-margin-top: 20vh;}
   #guitars{scroll-margin-top: 20vh;}
   #masks{scroll-margin-top: 20vh;}
   #items{scroll-margin-top: 20vh;}
   #worldmap{scroll-margin-top: 20vh;} 
-
 }
 
 /* WORLDMAP */

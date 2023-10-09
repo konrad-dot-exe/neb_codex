@@ -207,19 +207,12 @@ window.onload = (event) => {
 
       function showInfoCard(event, method){
 
-        console.log(method);
-
           // disable mouseover on mobile
           if (window.matchMedia('(max-width: 700px)').matches) {
             if (method == "mouse"){
               return;
             }
           }
-    
-          marker.style.opacity = "100%";
-          infocard.style.opacity = "100%";
-          
-          console.log(infocardImage.src);
 
           let levelName = marker.getAttribute('levelname');
           let levelDesc = marker.getAttribute('leveldesc');
@@ -227,7 +220,7 @@ window.onload = (event) => {
           let levelImage = marker.getAttribute('image');
           
           infocardName.textContent = levelName;
-          infocardDesc.textContent = levelDesc;
+          infocardDesc.innerHTML = levelDesc;
           infocardDifficulty.textContent = "Difficulty: " + levelDifficulty;
           if (infocardDifficulty.textContent == "Difficulty: N/A"){
             
@@ -238,7 +231,6 @@ window.onload = (event) => {
           }else{
             infocardDifficulty.style.display = "block";
             infocardImage.style.marginBottom = "0px";
-
           }
           infocardImage.src = levelImage;
           infocard.style.right= "0px";
@@ -410,7 +402,7 @@ window.onload = (event) => {
         {enemyData.map((enemy) => {
           const{ id, image, name, hp, pts, dngr, desc} = enemy;
           return(
-            <div key={id} className="enemy-card">
+            <div key={id} className="enemy-card" id={id}>
           <div className = "enemy-image"> <img src = {image}></img>  </div>
             
           <div className = "enemy-name"> 
@@ -447,8 +439,8 @@ window.onload = (event) => {
        {guitarData.map((guitar) => {
           const{ id, image, bulletImage, name, dmg, rate, ammo, desc} = guitar;
           return(
-          <div key={id} className="enemy-card guitar-card">
-          <div className = "enemy-image guitar-image"  id= {id}> <img src = {image} ></img>  </div>
+          <div key={id} className="enemy-card guitar-card" id= {id}>
+          <div className = "enemy-image guitar-image"  > <img src = {image} ></img>  </div>
             
           <div className = "bullet-image"> <img src = {bulletImage}></img>  </div>
 
@@ -487,7 +479,7 @@ window.onload = (event) => {
           const{ id, image, name, manaUsage, desc} = mask;
           return(
 
-          <div key={id} className="enemy-card">
+          <div key={id} className="enemy-card" id={id}>
           <div className = "enemy-image"> <img src = {image}></img>  </div>
 
           <div className = "enemy-name"> 
@@ -518,7 +510,7 @@ window.onload = (event) => {
           const{ id, image, imageAlt, name, pts, desc} = pickup;
           return(
 
-          <div key={id} className="enemy-card">
+          <div key={id} className="enemy-card" id={id}>
           <div className = "enemy-image "> <img src = {image}></img>  </div>
 
           <div className = "enemy-name"> 
@@ -575,11 +567,11 @@ window.onload = (event) => {
             <button id="zoom-out" >-</button>
           </div>
 
-            <div className="map-infocard" id="map-infocard">
+        <div className="map-infocard" id="map-infocard">
           <h2 className="infocard-name" id="infocard-name">SHREDONIA</h2>
           <img  src={screenshot} className="infocard-image" id="infocard-image"/>
           <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
-          <div className="infocard-description" ><p id="infocard-description"> This level is a totally mysterious enigma.</p></div>
+          <div className="infocard-description" ><p id="infocard-description"> Description goes here. </p></div>
           <button id="infocard-OK"> OK </button>
         </div>
 
