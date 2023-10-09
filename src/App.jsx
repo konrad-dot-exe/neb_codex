@@ -216,7 +216,7 @@ window.onload = (event) => {
 
           const map = document.getElementById('imgContainer');
 
-          map.style.display = "none";
+          map.style.opacity = "50%";
 
           let levelName = marker.getAttribute('levelname');
           let levelDesc = marker.getAttribute('leveldesc');
@@ -243,6 +243,8 @@ window.onload = (event) => {
 
       function hideInfoCard(event, method){
         
+        const map = document.getElementById('imgContainer');
+
         // disable mouseleave on mobile
           if (window.matchMedia('(max-width: 700px)').matches) {
             if (method == "mouse"){
@@ -250,7 +252,8 @@ window.onload = (event) => {
             }
           }
         
-        
+        map.style.opacity = "100%";
+
         marker.style.opacity = "0%";
         infocard.style.right= "-100%";
       }
