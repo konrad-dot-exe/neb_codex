@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useEffect } from 'react';
+
+import { useEffect, useRef } from 'react';
 
 import './App.css'
 
@@ -21,8 +21,6 @@ import {markersData} from './data'
 function App() {
 
 useEffect(() => {
-  
-  console.log('Component is mounted, DOM is loaded');
 
   const mapContainer = document.getElementById('map-container');
   const map = document.getElementById('imgContainer');
@@ -35,9 +33,9 @@ useEffect(() => {
   let zoomLevel = 70;
   let maxZoomOutLevel = 70;
 
-
-  // Function to update max scroll values
+  // Function to update max scroll values and reset zoom values
   function updateMaxScrollValues() {
+
       maxScrollLeft = mapContainer.scrollWidth - mapContainer.clientWidth;
       maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
 
@@ -68,15 +66,15 @@ useEffect(() => {
 
   // Update them on window resize
   window.addEventListener('resize', updateMaxScrollValues);
-    // Update them on window resize
+  
+  // Update current scroll values on mouse over
   mapContainer.addEventListener('mouseover', updateCurrentScrollValues);
 
   let scrollLeftPercentage = (mapContainer.scrollLeft / maxScrollLeft) * 100;
   let scrollTopPercentage = (mapContainer.scrollTop / maxScrollTop) * 100;
 
-    // Initial calculation
+  // Initial calculation
   updateMaxScrollValues();
-
   // for some reason I need to delay height calculation...
   setTimeout(()=>{
 
@@ -91,6 +89,7 @@ useEffect(() => {
 
 // ZOOMING
 
+// Set breakpoint for desktop / mobile
 if (window.matchMedia('(max-width: 700px)').matches) {
   zoomLevel = 250;
   maxZoomOutLevel = 250;
@@ -99,7 +98,8 @@ if (window.matchMedia('(max-width: 700px)').matches) {
   maxZoomOutLevel = 70;
 }
 
-// This event listener is triggered when the element with id 'zoom-in' is clicked.
+// handle zoom button clicks
+
 document.getElementById('zoom-in').addEventListener('click', () => {
   
   // Record the center of the current view.
@@ -107,7 +107,7 @@ document.getElementById('zoom-in').addEventListener('click', () => {
     const centerY = (mapContainer.scrollTop + mapContainer.clientHeight / 2) / mapContainer.scrollHeight;
 
     // Increase the zoom level.
-    zoomLevel += 10;
+    zoomLevel += 25;
     console.log("zoom level =" + zoomLevel);
 
     // Apply the new zoom level.
@@ -118,7 +118,7 @@ document.getElementById('zoom-in').addEventListener('click', () => {
     mapContainer.scrollTop = centerY * mapContainer.scrollHeight - mapContainer.clientHeight / 2;
 });
 
-// This event listener is triggered when the element with id 'zoom-out' is clicked.
+
 document.getElementById('zoom-out').addEventListener('click', () => {
   
   // Prevent zooming out past the original size.
@@ -129,7 +129,7 @@ document.getElementById('zoom-out').addEventListener('click', () => {
     const centerY = (mapContainer.scrollTop + mapContainer.clientHeight / 2) / mapContainer.scrollHeight;
 
     // Decrease the zoom level.
-    zoomLevel -= 10;
+    zoomLevel -= 25;
     console.log("zoom level =" + zoomLevel);
 
     // Apply the new zoom level.
@@ -140,58 +140,58 @@ document.getElementById('zoom-out').addEventListener('click', () => {
     mapContainer.scrollTop = centerY * mapContainer.scrollHeight - mapContainer.clientHeight / 2;
 });
     
-    // debug
-  setInterval(() => {
+  //   // debug
+  // setInterval(() => {
       
-    // Calculate the maximum possible scroll values
-    let maxScrollLeft = mapContainer.scrollWidth - mapContainer.clientWidth;
-    let maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
+  //   // Calculate the maximum possible scroll values
+  //   let maxScrollLeft = mapContainer.scrollWidth - mapContainer.clientWidth;
+  //   let maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
 
-    // Calculate scrollLeftPercentage and handle division by zero
-    if (maxScrollLeft === 0) {
-        scrollLeftPercentage = 0;
-    } else {
-        scrollLeftPercentage = (mapContainer.scrollLeft / maxScrollLeft) * 100;
-    }
+  //   // Calculate scrollLeftPercentage and handle division by zero
+  //   if (maxScrollLeft === 0) {
+  //       scrollLeftPercentage = 0;
+  //   } else {
+  //       scrollLeftPercentage = (mapContainer.scrollLeft / maxScrollLeft) * 100;
+  //   }
 
-    // Calculate scrollTopPercentage and handle division by zero
-    if (maxScrollTop === 0) {
-        scrollTopPercentage = 0;
-    } else {
-        scrollTopPercentage = (mapContainer.scrollTop / maxScrollTop) * 100;
-    }
+  //   // Calculate scrollTopPercentage and handle division by zero
+  //   if (maxScrollTop === 0) {
+  //       scrollTopPercentage = 0;
+  //   } else {
+  //       scrollTopPercentage = (mapContainer.scrollTop / maxScrollTop) * 100;
+  //   }
 
-    // Additional checks to handle NaN values
-    if (isNaN(scrollLeftPercentage)) {
-        scrollLeftPercentage = 0;
-    }
+  //   // Additional checks to handle NaN values
+  //   if (isNaN(scrollLeftPercentage)) {
+  //       scrollLeftPercentage = 0;
+  //   }
 
-    if (isNaN(scrollTopPercentage)) {
-        scrollTopPercentage = 0;
-    }
+  //   if (isNaN(scrollTopPercentage)) {
+  //       scrollTopPercentage = 0;
+  //   }
 
-    console.log("scrollLeft% =", scrollLeftPercentage);
-    console.log("scrollTop% =", scrollTopPercentage);
+  //   console.log("scrollLeft% =", scrollLeftPercentage);
+  //   console.log("scrollTop% =", scrollTopPercentage);
 
-      // updateMaxScrollValues();
-      // scrollLeftPercentage = (mapContainer.scrollLeft / maxScrollLeft) * 100;
-      // scrollTopPercentage = (mapContainer.scrollTop / maxScrollTop) * 100;
+  //     // updateMaxScrollValues();
+  //     // scrollLeftPercentage = (mapContainer.scrollLeft / maxScrollLeft) * 100;
+  //     // scrollTopPercentage = (mapContainer.scrollTop / maxScrollTop) * 100;
 
-      // Log the individual values to understand what’s happening
-      // console.log('maxScrollTop:', maxScrollTop);
-      // console.log('mapContainer.scrollTop:', mapContainer.scrollTop);
-      // console.log('mapContainer.scrollHeight:', mapContainer.scrollHeight);
-      // console.log('mapContainer.clientHeight:', mapContainer.clientHeight);
+  //     // Log the individual values to understand what’s happening
+  //     // console.log('maxScrollTop:', maxScrollTop);
+  //     // console.log('mapContainer.scrollTop:', mapContainer.scrollTop);
+  //     // console.log('mapContainer.scrollHeight:', mapContainer.scrollHeight);
+  //     // console.log('mapContainer.clientHeight:', mapContainer.clientHeight);
       
-      //  console.log('maxScrollLeft:', maxScrollLeft);
-      //  console.log('mapContainer.scrollLeft:', mapContainer.scrollLeft);
-      //  console.log('mapContainer.scrollWidth:', mapContainer.scrollWidth);
-      //  console.log('mapContainer.clientWidth:', mapContainer.clientWidth);
+  //     //  console.log('maxScrollLeft:', maxScrollLeft);
+  //     //  console.log('mapContainer.scrollLeft:', mapContainer.scrollLeft);
+  //     //  console.log('mapContainer.scrollWidth:', mapContainer.scrollWidth);
+  //     //  console.log('mapContainer.clientWidth:', mapContainer.clientWidth);
 
-  }, 1000);  
+  // }, 1000);  
 
 
-});
+  });
  
   
 window.onload = (event) => {
@@ -203,9 +203,19 @@ window.onload = (event) => {
       var infocardDesc = document.getElementById("infocard-description");
       var infocardDifficulty = document.getElementById("infocard-difficulty");
       var infocardImage = document.getElementById("infocard-image");
+      var infocardOK = document.getElementById("infocard-OK");
 
+      function showInfoCard(event, method){
 
-      marker.addEventListener('mouseenter', function() {
+        console.log(method);
+
+          // disable mouseover on mobile
+          if (window.matchMedia('(max-width: 700px)').matches) {
+            if (method == "mouse"){
+              return;
+            }
+          }
+    
           marker.style.opacity = "100%";
           infocard.style.opacity = "100%";
           
@@ -232,33 +242,36 @@ window.onload = (event) => {
           }
           infocardImage.src = levelImage;
           infocard.style.right= "0px";
-          
+
+      }
+
+      function hideInfoCard(event, method){
+        
+        // disable mouseleave on mobile
+          if (window.matchMedia('(max-width: 700px)').matches) {
+            if (method == "mouse"){
+              return;
+            }
+          }
+        
+        
+        marker.style.opacity = "0%";
+        infocard.style.right= "-100%";
+      }
+
+      marker.addEventListener('mouseenter', (event) => {
+        showInfoCard(event, "mouse");
       });
-
-      marker.addEventListener('mouseleave', function() {
-          marker.style.opacity = "0%";
-          infocard.style.right= "-100%";
+       marker.addEventListener('click', (event) => {
+        showInfoCard(event, "tap");
       });
-
-    }
-
-      function setResponsiveImage() {
-        const image = document.getElementById('rapid');
-
-        console.log(image)
-
-        const matchMedia = window.matchMedia('(max-width: 800px)');
-
-        if (matchMedia.matches) {
-            image.src = ""; // set the source for small screens
-            image.style.opacity = "50%";
-            console.log("alt image = " + image.src);
-        } else {
-            
-            image.src = guitarData[0].image; // set the source for large screens
-            image.style.opacity = "100%";
-            console.log("default image = " + guitarData[0].image);
-        }
+      
+      marker.addEventListener('mouseleave', (event) => {
+        hideInfoCard(event, "mouse");
+      });
+       infocardOK.addEventListener('click', (event) => {
+        hideInfoCard(event, "tap");
+      });
 
     }
 
@@ -529,16 +542,11 @@ window.onload = (event) => {
 
        </div>
 
-       <div className="section-header" id="worldmap"><h1>WORLD MAP</h1></div>
+       <div className="section-header" ><h1>WORLD MAP</h1></div>
 
-       <div className="map-infocard" id="map-infocard">
-          <h2 className="infocard-name" id="infocard-name">SHREDONIA</h2>
-          <img  src={screenshot} className="infocard-image" id="infocard-image"/>
-          <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
-          <div className="infocard-description" ><p id="infocard-description"> This level is a totally mysterious enigma.</p></div>
-      </div>
+       
 
-       <div className="map-app-container">
+       <div className="map-app-container" id="worldmap">
 
        <div className="map-container" id="map-container">
         <div className="img-magnifier-container" id="imgContainer" >
@@ -566,9 +574,18 @@ window.onload = (event) => {
             <button id="zoom-in" >+</button>
             <button id="zoom-out" >-</button>
           </div>
+
+            <div className="map-infocard" id="map-infocard">
+          <h2 className="infocard-name" id="infocard-name">SHREDONIA</h2>
+          <img  src={screenshot} className="infocard-image" id="infocard-image"/>
+          <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
+          <div className="infocard-description" ><p id="infocard-description"> This level is a totally mysterious enigma.</p></div>
+          <button id="infocard-OK"> OK </button>
+        </div>
+
        </div>
 
-       {/* onClick={() => console.log('BUTTON CLICK')} */}
+        
        
     </>
 
