@@ -169,7 +169,7 @@ export const markersData = [
     size: '',
     image: shrineChrono,
     leveldifficulty: 'N/A',
-    leveldesc: 'This shrine unlocks the <a href="#mask_chrono">CHRONO MASK</a>, granting you time warping powers.',
+    leveldesc: 'This shrine unlocks the <a href="#mask_chrono" class="infocard-link">CHRONO MASK</a>, granting you time warping powers.',
     additionalData: '...',
   },
 
@@ -195,7 +195,7 @@ export const markersData = [
     size: 'large',
     image: fluviousA,
     leveldifficulty: 'MEDIUM',
-    leveldesc: `There are lots of <a href="#explodo">EXPLODOS</a> and <a href="#sentry">SENTRIES</a> here, so you may want to shoot strategically rather than going in guns blazing.`,
+    leveldesc: `There are lots of <a href="#explodo" class="infocard-link">EXPLODOS</a> and <a href="#sentry" class="infocard-link">SENTRIES</a> here, so you may want to shoot strategically rather than going in guns blazing.`,
     additionalData: '...',
   },
 
@@ -243,7 +243,7 @@ export const markersData = [
     size: '',
     image: guitarBlue,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the <a href="#helix">HELIX GUITAR</a>.`,
+    leveldesc: `This shrine unlocks the <a href="#helix" class="infocard-link">HELIX GUITAR</a>.`,
     additionalData: '...',
   },
 
@@ -269,7 +269,7 @@ export const markersData = [
     size: '',
     image: digitemple2,
     leveldifficulty: 'EASY',
-    leveldesc: `The first place you'll encounter those big dopey <a href="#purple_worm">PURPLE WORMS</a>. There are a few secrets hidden on this one so try and explore some nooks.`,
+    leveldesc: `The first place you'll encounter those big dopey <a href="#purple_worm" class="infocard-link">PURPLE WORMS</a>. There are a few secrets hidden on this one so try and explore some nooks.`,
     additionalData: '...',
   },
 
@@ -281,7 +281,7 @@ export const markersData = [
     size: '',
     image: digitemple3,
     leveldifficulty: 'EASY',
-    leveldesc: `There are a lot of <a href="#explodo">EXPLODOS</a> here so be careful. The ending is particulary dangerous with all of the spikes everywhere. See if you can find the <a href="#double_guitar">DOUBLE GUITAR</a> powerup.`,
+    leveldesc: `There are a lot of <a href="#explodo" class="infocard-link">EXPLODOS</a> here so be careful. The ending is particulary dangerous with all of the spikes everywhere. See if you can find the <a href="#double_guitar" class="infocard-link">DOUBLE GUITAR</a> powerup.`,
     additionalData: '...',
   },
 
@@ -293,7 +293,7 @@ export const markersData = [
     size: '',
     image: guitarYellow,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the <a href="#spread">SPREAD GUITAR</a>.`,
+    leveldesc: `This shrine unlocks the <a href="#spread" class="infocard-link">SPREAD GUITAR</a>.`,
     additionalData: '...',
   },
 
@@ -305,7 +305,7 @@ export const markersData = [
     size: 'large',
     image: blokoReef,
     leveldifficulty: 'EASY',
-    leveldesc: `This level is a bit more hectic than the other ones on this island because it forces you into close quarters with enemies. Watch out for the swarm of <a href="#rotar">ROTARS</a> after the checkpoint!`,
+    leveldesc: `This level is a bit more hectic than the other ones on this island because it forces you into close quarters with enemies. Watch out for the swarm of <a href="#rotar" class="infocard-link">ROTARS</a> after the checkpoint!`,
     additionalData: '...',
   },
 
@@ -329,7 +329,7 @@ export const markersData = [
     size: '',
     image: shrineMonkey,
     leveldifficulty: 'N/A',
-    leveldesc: 'This shrine unlocks the <a href="#mask_monkey">MONKEY MASK</a>, granting you a savage boost to your speed.',
+    leveldesc: 'This shrine unlocks the <a href="#mask_monkey" class="infocard-link">MONKEY MASK</a>, granting you a savage boost to your speed.',
     additionalData: '...',
   },
   
@@ -341,7 +341,7 @@ export const markersData = [
     size: '',
     image: guitarRed,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the <a href="#guitar_rapid">RAPID GUITAR</a>.`,
+    leveldesc: `This shrine unlocks the <a href="#guitar_rapid" class="infocard-link">RAPID GUITAR</a>.`,
     additionalData: '...',
   },
 
@@ -379,7 +379,7 @@ export const markersData = [
     size: '',
     image: shrineDragon,
     leveldifficulty: 'N/A',
-    leveldesc: 'This shrine unlocks the <a href="#mask_dragon">DRAGON MASK</a> which sprays nearby enemies with fire.',
+    leveldesc: 'This shrine unlocks the <a href="#mask_dragon" class="infocard-link">DRAGON MASK</a> which sprays nearby enemies with fire.',
     additionalData: '...',
   },
   
@@ -393,7 +393,7 @@ export const markersData = [
     size: '',
     image: blokopolis1,
     leveldifficulty: 'MED',
-    leveldesc: `On the outskirts of Blokopolis, this level introduces a bunch of new enemies including ORBITRONS, SENTINELS, and <a href="#turret">TURRETS</a>.`,
+    leveldesc: `On the outskirts of Blokopolis, this level introduces a bunch of new enemies including ORBITRONS, SENTINELS, and <a href="#turret" class="infocard-link">TURRETS</a>.`,
     additionalData: '...',
   },
 
@@ -405,7 +405,7 @@ export const markersData = [
     size: '',
     image: blokohub,
     leveldifficulty: 'MED',
-    leveldesc: `This is a large level with vertical scrolling where you will likely encounter <a href="#laserbot">LASERBOTS</a> for the first time. There's also a big secret to discover shortly after the checkpoint.`,
+    leveldesc: `This is a large level with vertical scrolling where you will likely encounter <a href="#laserbot" class="infocard-link">LASERBOTS</a> for the first time. There's also a big secret to discover shortly after the checkpoint.`,
     additionalData: '...',
   },
 
@@ -429,7 +429,7 @@ export const markersData = [
     size: '',
     image: blokopolis3,
     leveldifficulty: 'HARD',
-    leveldesc: `Watch out for SENTINELS guarding various parts of this level, sometimes it's smarter to just sneak by them. You will also encounter the dreaded <a href="#quantoid">QUANTOID</a> enemies at the end.`,
+    leveldesc: `Watch out for SENTINELS guarding various parts of this level, sometimes it's smarter to just sneak by them. You will also encounter the dreaded <a href="#quantoid" class="infocard-link">QUANTOID</a> enemies at the end.`,
     additionalData: '...',
   },
 
@@ -453,7 +453,7 @@ export const markersData = [
     size: 'large',
     image: fractoplex,
     leveldifficulty: 'EXTREME',
-    leveldesc: `Another level where all of the platforms are constantly moving and wrapping through the screen, but with more spikes. If that wasn't bad enough you will also encounter <a href="#executor">EXECUTORS</a> here too.`,
+    leveldesc: `Another level where all of the platforms are constantly moving and wrapping through the screen, but with more spikes. If that wasn't bad enough you will also encounter <a href="#executor" class="infocard-link">EXECUTORS</a> here too.`,
     additionalData: '...',
   },
 
@@ -465,7 +465,7 @@ export const markersData = [
     size: '',
     image: blokoplex,
     leveldifficulty: 'EXTREME',
-    leveldesc: `It's best to stock up on powerups before venturing into this level. You will encounter lots of <a href="#quantoid">QUANTOIDS</a> and several <a href="#executor">EXECUTORS</a> here.`,
+    leveldesc: `It's best to stock up on powerups before venturing into this level. You will encounter lots of <a href="#quantoid" class="infocard-link">QUANTOIDS</a> and several <a href="#executor" class="infocard-link">EXECUTORS</a> here.`,
     additionalData: '...',
   },
 
@@ -489,7 +489,7 @@ export const markersData = [
     size: '',
     image: guitarGreen,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the <a href="#laser">LASER GUITAR</a>.`,
+    leveldesc: `This shrine unlocks the <a href="#laser" class="infocard-link">LASER GUITAR</a>.`,
     additionalData: '...',
   },
 
@@ -501,7 +501,7 @@ export const markersData = [
     size: '',
     image: warpgateGreenCyber,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to the south western part of CYBER ZONE where you can find the <a href="#electro">ELECTRO GUITAR</a> and the coveted <a href="#mask_kahuna">KAHUNA MASK</a>. On the north-west edge you'll find QUANTOZORD who guards one of the <a href="#cryptogem">CRYPTOGEMS</a>.`,
+    leveldesc: `This warpgate leads to the south western part of CYBER ZONE where you can find the <a href="#electro" class="infocard-link">ELECTRO GUITAR</a> and the coveted <a href="#mask_kahuna" class="infocard-link">KAHUNA MASK</a>. On the north-west edge you'll find QUANTOZORD who guards one of the <a href="#cryptogem" class="infocard-link">CRYPTOGEMS</a>.`,
     additionalData: '...',
   },
 
@@ -513,7 +513,7 @@ export const markersData = [
     size: '',
     image: warpgateCyan,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to the southern part of CYBER ZONE where you can find the <a href="#electro">ELECTRO GUITAR</a> and the coveted <a href="#mask_kahuna">KAHUNA MASK</a>. On the north-west edge you'll find QUANTOZORD who guards one of the <a href="#cryptogem">CRYPTOGEMS</a>.`,
+    leveldesc: `This warpgate leads to the southern part of CYBER ZONE where you can find the <a href="#electro" class="infocard-link">ELECTRO GUITAR</a> and the coveted <a href="#mask_kahuna" class="infocard-link">KAHUNA MASK</a>. On the north-west edge you'll find QUANTOZORD who guards one of the <a href="#cryptogem" class="infocard-link">CRYPTOGEMS</a>.`,
     additionalData: '...',
   },
 
@@ -537,7 +537,7 @@ export const markersData = [
     size: 'large',
     image: auroraDigitalis,
     leveldifficulty: 'HARD',
-    leveldesc: `A floating outpost of Blokopolis where you must battle through fleets of <a href="#delto">DELTOS</a> and encounter several <a href="#quantoid">QUANTOIDS</a>.`,
+    leveldesc: `A floating outpost of Blokopolis where you must battle through fleets of <a href="#delto" class="infocard-link">DELTOS</a> and encounter several <a href="#quantoid" class="infocard-link">QUANTOIDS</a>.`,
     additionalData: '...',
   },
 
@@ -549,7 +549,7 @@ export const markersData = [
     size: 'large',
     image: fractopolis2,
     leveldifficulty: 'EXTREME',
-    leveldesc: `Another level where all of the platforms are constantly moving and wrapping through the screen. There are tons of <a href="#turret">TURRETS</a>, so get ready for some serious bullet heck!`,
+    leveldesc: `Another level where all of the platforms are constantly moving and wrapping through the screen. There are tons of <a href="#turret" class="infocard-link">TURRETS</a>, so get ready for some serious bullet heck!`,
     additionalData: '...',
   },
 
@@ -576,7 +576,7 @@ export const markersData = [
     size: '',
     image: guitarPurple,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the <a href="#sonic">SONIC GUITAR</a>.`,
+    leveldesc: `This shrine unlocks the <a href="#sonic" class="infocard-link">SONIC GUITAR</a>.`,
     additionalData: '...',
   },
 
@@ -698,7 +698,7 @@ export const markersData = [
     size: '',
     image: shrinePaladin,
     leveldifficulty: 'N/A',
-    leveldesc: 'This shrine unlocks the <a href="#mask_paladin">PALADIN MASK</a> which surrounds you with deadly protective orbs.',
+    leveldesc: 'This shrine unlocks the <a href="#mask_paladin" class="infocard-link">PALADIN MASK</a> which surrounds you with deadly protective orbs.',
     additionalData: '...',
   },
 

@@ -18,6 +18,8 @@ import {markersData} from './data'
 
 function App() {
 
+
+  
 let hamburger = document.getElementById('hamburger-menu');
 let darkenOverlay = document.getElementById('darken-overlay');
 let hamburgerOpen = false;
@@ -43,6 +45,12 @@ let hamburgerOpen = false;
     } 
 
   let hideInfoCard; // Declare hideInfoCard in the outer scope
+  let showMessage;
+
+  showMessage = function(){
+    console.log("it worked!");
+  } 
+
 
 useEffect(() => {
 
@@ -64,8 +72,8 @@ useEffect(() => {
       maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
 
       if (window.matchMedia('(max-width: 700px)').matches) {
-        maxZoomOutLevel = 175;
-        zoomLevel = 250;
+        maxZoomOutLevel = 225;
+        zoomLevel = 225;
         if (zoomLevel < maxZoomOutLevel){
           zoomLevel = maxZoomOutLevel;
         }
@@ -112,8 +120,8 @@ useEffect(() => {
 
 // Set breakpoint for desktop / mobile
 if (window.matchMedia('(max-width: 700px)').matches) {
-  zoomLevel = 250;
-  maxZoomOutLevel = 175;
+  zoomLevel = 225;
+  maxZoomOutLevel = 225;
   console.log("max zoom-out level set at " + maxZoomOutLevel)
 }else{
   zoomLevel = 95;
@@ -236,9 +244,9 @@ document.getElementById('zoom-out').addEventListener('click', () => {
 
           const map = document.getElementById('imgContainer');
 
-          document.documentElement.classList.add('no-scroll');
-          header.style.marginRight ="25px";
-          topNav.style.marginRight ="25px";
+          //document.documentElement.classList.add('no-scroll');
+          // header.style.marginRight ="25px";
+          // topNav.style.marginRight ="25px";
 
           infocardDarkenOverlay.style.pointerEvents = "all";
           infocardDarkenOverlay.style.opacity = "50%";
@@ -264,7 +272,7 @@ document.getElementById('zoom-out').addEventListener('click', () => {
     
       }
 
-      hideInfoCard = function(event, method, marker){
+      function hideInfoCard(event, method, marker){
         
         const map = document.getElementById('imgContainer');
 
@@ -308,6 +316,12 @@ document.getElementById('zoom-out').addEventListener('click', () => {
       infocardOK.addEventListener('touchstart', (event) => {
         hideInfoCard(event, "tap", marker);
       });
+
+       document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('infocard-link')) {
+            hideInfoCard(e, "tap", marker);
+        }
+    });
 
     }
 
@@ -417,10 +431,6 @@ document.getElementById('zoom-out').addEventListener('click', () => {
     setMarker(shrinePaladin);
     setMarker(warpgateGreenKrsytal);
 
-    let hamburger = document.getElementById('hamburger-menu');
-    let darkenOverlay = document.getElementById('darken-overlay');
-    let hamburgerOpen = false;
-
  });
 
   return (
@@ -441,7 +451,7 @@ document.getElementById('zoom-out').addEventListener('click', () => {
         </div>
             
         <nav className="top-nav" id="top-nav">
-                <div> <a href="#enemies" >ENEMIES</a> </div>
+                <div> <a onClick={showMessage} href="#enemies" >ENEMIES</a> </div>
                 <div> <a href="#guitars" >GUITARS</a> </div>
                 <div> <a href="#masks" >MASKS</a> </div>
                 <div> <a href="#items" >ITEMS</a> </div>

@@ -698,6 +698,7 @@ header{
   max-width:1200px;
   margin: auto;
   margin-bottom: 8vh;
+  margin-top: 4vh;
   display: flex;
   justify-content: center;
   max-height: 600px; /* Adjust as needed */
@@ -840,6 +841,9 @@ header{
   border: 1px solid #ccc; /* Optional, for better visibility */
   margin: auto;
   min-height: 60vh;
+  width: 90vw;
+
+ 
 }
 
 #imgContainer{
@@ -849,8 +853,10 @@ header{
 
 .map-app-container{
   flex-direction: column;
+  margin-bottom: 4vh;
 
 }
 
 }
+
 
