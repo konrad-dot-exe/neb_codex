@@ -14,11 +14,35 @@ import worldmap from './assets/Worldmap.jpg'
 import screenshot from './assets/screenshot.png'
 import wizzy from './assets/Wizzy3.gif'
 
-import guitar_rapid_alt from './assets/guitar_red_mobile.png'
-
 import {markersData} from './data'
 
 function App() {
+
+let hamburger = document.getElementById('hamburger-menu');
+let darkenOverlay = document.getElementById('darken-overlay');
+let hamburgerOpen = false;
+
+// open the side menu
+    function toggleHamburger(){
+        if (!hamburgerOpen){
+            hamburger = document.getElementById('hamburger-menu');
+            darkenOverlay = document.getElementById('darken-overlay');
+            
+            hamburger.style.top = "17vh";
+            darkenOverlay.style.opacity = "100%";
+            
+            hamburgerOpen = true;
+        
+        } else{
+            hamburger = document.getElementById('hamburger-menu');
+            hamburger.style.top = "-100%";
+            darkenOverlay.style.opacity = "0%";
+            hamburgerOpen = false;
+        }
+        console.log("toggle");
+    } 
+
+  let hideInfoCard; // Declare hideInfoCard in the outer scope
 
 useEffect(() => {
 
@@ -30,8 +54,8 @@ useEffect(() => {
   let maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
 
   // Store the initial zoom level.
-  let zoomLevel = 70;
-  let maxZoomOutLevel = 70;
+  let zoomLevel = 95;
+  let maxZoomOutLevel = 95;
 
   // Function to update max scroll values and reset zoom values
   function updateMaxScrollValues() {
@@ -40,15 +64,15 @@ useEffect(() => {
       maxScrollTop = mapContainer.scrollHeight - mapContainer.clientHeight;
 
       if (window.matchMedia('(max-width: 700px)').matches) {
-        maxZoomOutLevel = 250;
+        maxZoomOutLevel = 175;
         zoomLevel = 250;
         if (zoomLevel < maxZoomOutLevel){
           zoomLevel = maxZoomOutLevel;
         }
 
       }else{
-        maxZoomOutLevel = 70;
-        zoomLevel = 70;
+        maxZoomOutLevel = 95;
+        zoomLevel = 95;
         if (zoomLevel < maxZoomOutLevel){
           zoomLevel = maxZoomOutLevel;
         }
@@ -70,9 +94,6 @@ useEffect(() => {
   // Update current scroll values on mouse over
   mapContainer.addEventListener('mouseover', updateCurrentScrollValues);
 
-  let scrollLeftPercentage = (mapContainer.scrollLeft / maxScrollLeft) * 100;
-  let scrollTopPercentage = (mapContainer.scrollTop / maxScrollTop) * 100;
-
   // Initial calculation
   updateMaxScrollValues();
   // for some reason I need to delay height calculation...
@@ -92,10 +113,11 @@ useEffect(() => {
 // Set breakpoint for desktop / mobile
 if (window.matchMedia('(max-width: 700px)').matches) {
   zoomLevel = 250;
-  maxZoomOutLevel = 250;
+  maxZoomOutLevel = 175;
+  console.log("max zoom-out level set at " + maxZoomOutLevel)
 }else{
-  zoomLevel = 150;
-  maxZoomOutLevel = 70;
+  zoomLevel = 95;
+  maxZoomOutLevel = 95;
 }
 
 // handle zoom button clicks
@@ -121,6 +143,9 @@ document.getElementById('zoom-in').addEventListener('click', () => {
 
 document.getElementById('zoom-out').addEventListener('click', () => {
   
+    console.log("zoomLevel = " + zoomLevel);
+    console.log("maxZoomOutLevel = " + maxZoomOutLevel);
+
   // Prevent zooming out past the original size.
     if (zoomLevel <= maxZoomOutLevel) return;
 
@@ -130,7 +155,6 @@ document.getElementById('zoom-out').addEventListener('click', () => {
 
     // Decrease the zoom level.
     zoomLevel -= 25;
-    console.log("zoom level =" + zoomLevel);
 
     // Apply the new zoom level.
     map.style.width = `${zoomLevel}%`;
@@ -190,12 +214,6 @@ document.getElementById('zoom-out').addEventListener('click', () => {
 
   // }, 1000);  
 
-
-  });
- 
-  
-window.onload = (event) => {
-    
     function setMarker(marker){
     
       var infocard = document.getElementById("map-infocard");
@@ -204,19 +222,27 @@ window.onload = (event) => {
       var infocardDifficulty = document.getElementById("infocard-difficulty");
       var infocardImage = document.getElementById("infocard-image");
       var infocardOK = document.getElementById("infocard-OK");
+      var infocardDarkenOverlay = document.getElementById("infocard-darken-overlay");
+      var header = document.getElementById("header");
+      var topNav = document.getElementById("top-nav");
 
       function showInfoCard(event, method){
 
-          // disable mouseover on mobile
-          if (window.matchMedia('(max-width: 700px)').matches) {
+          marker.style.opacity = "100%";
+
             if (method == "mouse"){
               return;
             }
-          }
 
           const map = document.getElementById('imgContainer');
 
-          map.style.opacity = "50%";
+          document.documentElement.classList.add('no-scroll');
+          header.style.marginRight ="25px";
+          topNav.style.marginRight ="25px";
+
+          infocardDarkenOverlay.style.pointerEvents = "all";
+          infocardDarkenOverlay.style.opacity = "50%";
+          infocard.style.top= "17vh";
 
           let levelName = marker.getAttribute('levelname');
           let levelDesc = marker.getAttribute('leveldesc');
@@ -227,8 +253,6 @@ window.onload = (event) => {
           infocardDesc.innerHTML = levelDesc;
           infocardDifficulty.textContent = "Difficulty: " + levelDifficulty;
           if (infocardDifficulty.textContent == "Difficulty: N/A"){
-            
-            console.log("none");
             infocardDifficulty.style.display = "none";
             infocardImage.style.marginBottom = "1rem";
 
@@ -237,25 +261,28 @@ window.onload = (event) => {
             infocardImage.style.marginBottom = "0px";
           }
           infocardImage.src = levelImage;
-          infocard.style.right= "0px";
-
+    
       }
 
-      function hideInfoCard(event, method){
+      hideInfoCard = function(event, method, marker){
         
         const map = document.getElementById('imgContainer');
 
-        // disable mouseleave on mobile
-          if (window.matchMedia('(max-width: 700px)').matches) {
+        console.log('marker = ' + marker);
+
+        marker.style.opacity = "0%";
+
+
             if (method == "mouse"){
               return;
             }
-          }
         
-        map.style.opacity = "100%";
-
-        marker.style.opacity = "0%";
-        infocard.style.right= "-100%";
+        document.documentElement.classList.remove('no-scroll');
+        header.style.marginRight ="8px";
+        topNav.style.marginRight ="8px";
+        infocardDarkenOverlay.style.pointerEvents = "none";
+        infocardDarkenOverlay.style.opacity = "0%";
+        infocard.style.top= "-100%";
       }
 
       marker.addEventListener('mouseenter', (event) => {
@@ -271,15 +298,15 @@ window.onload = (event) => {
       });
       
       marker.addEventListener('mouseleave', (event) => {
-        hideInfoCard(event, "mouse");
+        hideInfoCard(event, "mouse", marker);
       });
 
        infocardOK.addEventListener('click', (event) => {
-        hideInfoCard(event, "tap");
+        hideInfoCard(event, "tap", marker);
       });
 
       infocardOK.addEventListener('touchstart', (event) => {
-        hideInfoCard(event, "tap");
+        hideInfoCard(event, "tap", marker);
       });
 
     }
@@ -390,16 +417,51 @@ window.onload = (event) => {
     setMarker(shrinePaladin);
     setMarker(warpgateGreenKrsytal);
 
-};
+    let hamburger = document.getElementById('hamburger-menu');
+    let darkenOverlay = document.getElementById('darken-overlay');
+    let hamburgerOpen = false;
+
+ });
 
   return (
     <>
       
-      <header >
+      <header id="header">
         <a href ="#"><h1>NEBULAR CODEX</h1></a>
       </header>
 
-        <Navbar/>
+              <div id="hamburger-menu" className="hamburger-menu">
+            <div className = "hamburger-link-container" >
+            <a href="#enemies" onClick={toggleHamburger}>ENEMIES</a>
+            <a href="#guitars" onClick={toggleHamburger}>GUITARS</a>
+            <a href="#masks" onClick={toggleHamburger}>MASKS</a> 
+            <a href="#items" onClick={toggleHamburger}>ITEMS</a>
+            <a href="#worldmap" onClick={toggleHamburger}>WORLDMAP</a>
+            </div>
+        </div>
+            
+        <nav className="top-nav" id="top-nav">
+                <div> <a href="#enemies" >ENEMIES</a> </div>
+                <div> <a href="#guitars" >GUITARS</a> </div>
+                <div> <a href="#masks" >MASKS</a> </div>
+                <div> <a href="#items" >ITEMS</a> </div>
+                <div> <a href="#worldmap" >WORLDMAP</a> </div>
+           
+                <div onClick={toggleHamburger} className = "hamburger-icon"> 
+                    <svg width="30" height="30">                          
+                        <path d="M0,8 30,8" stroke="var(--clr-nebular-purple-500)" strokeWidth="3"/>    
+                        <path d="M0,16 30,16" stroke="var(--clr-nebular-purple-500)" strokeWidth="3"/>
+                        <path d="M0,24 30,24" stroke="var(--clr-nebular-purple-500)" strokeWidth="3"/>
+                    </svg>
+                </div>
+              
+        </nav>
+
+        <div className="black-rect" id="black-rect"></div>
+
+        <div className ="darken-overlay" id="darken-overlay"></div>
+
+        {/* <Navbar/> */}
 
       <div className="hero"> 
       
@@ -584,17 +646,18 @@ window.onload = (event) => {
             <button id="zoom-out" >-</button>
           </div>
 
-        <div className="map-infocard" id="map-infocard">
-          <h2 className="infocard-name" id="infocard-name">SHREDONIA</h2>
-          <img  src={screenshot} className="infocard-image" id="infocard-image"/>
-          <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
-          <div className="infocard-description" ><p id="infocard-description"> Description goes here. </p></div>
-          <button id="infocard-OK"> OK </button>
-        </div>
-
        </div>
 
-        
+       <div className="infocard-container">
+        <div className="map-infocard" id="map-infocard">
+            <h2 className="infocard-name" id="infocard-name">SHREDONIA</h2>
+            <img  src={screenshot} className="infocard-image" id="infocard-image"/>
+            <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
+            <div className="infocard-description" ><p id="infocard-description"> Description goes here. </p></div>
+            <button id="infocard-OK"> OK </button>
+          </div>
+          <div className ="infocard-darken-overlay" id="infocard-darken-overlay"></div>
+        </div> 
        
     </>
 

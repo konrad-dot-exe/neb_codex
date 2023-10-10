@@ -25,7 +25,7 @@
 .black-rect{
 transition:0.6s all;
 pointer-events: none;
-z-index: 5;
+z-index: 6;
 position: fixed;
 height: 16vh;
 background-color:rgb(0, 0, 0);
@@ -48,8 +48,21 @@ top: 0;
   pointer-events: none;
 }
 
+.infocard-darken-overlay{
+  transition: all 0.6s;
+  z-index: 4;
+  opacity: 0%;
+  background-color:black;
+  position: fixed;
+  top:0%;
+  left:0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 header{
-  z-index: 6;
+  z-index: 7;
   display: flex;
   position: fixed;
   top: 0;
@@ -149,23 +162,22 @@ header{
 
 .map-infocard{
   color: white;
-  z-index: 3;
   display: flex;
-  position: fixed;
-  top: 15.25vh;
-
-  width: 25%;
-  margin: 8px;
-  place-items:center;
-  min-width: 320px;
-  min-height: 12vh;
   flex-direction:column;
-  right: -100%;
+  z-index: 5;
+  position: fixed;
+  top: -100%; 
+  width: 40%;
+  margin: auto;
+  place-items:center;
+  min-width: 700px;
+  min-height: 12vh;
+  transition:top 0.6s, bottom 0.6s, left 0.6s, right 0.6s;; 
   background: var(--card-bg-gradient);
   background-repeat: repeat;
   border-radius: var(--border_radius);
-  transition:0.6s all;
-  pointer-events: none;
+
+  /* pointer-events: none; */
   outline: 1px solid var(--clr-card-outline);
   padding: 1rem;
 }
@@ -205,7 +217,7 @@ header{
 }
 
 .top-nav{
-  z-index: 6;
+  z-index: 7;
   display: flex;
   position: fixed;
   top: 9.5vh;
@@ -448,8 +460,20 @@ header{
   margin: .25rem;
 }
 
+.infocard-container{
+  z-index: 8;
+  bottom: 50vh;
+  width: 100%;
+  height: 0px;
+  display: flex;
+  justify-content: center;
+}
+
 
 @media screen and (max-width: 1100px){
+  
+  
+  
   .enemy-card{
     margin: 0.25rem;
     margin-bottom:0.5rem;
@@ -583,18 +607,19 @@ header{
 
 .map-container {
   position: relative;
-  width: 100%;
+  width: 80vw;
   max-width: 80%; /* Adjust as needed */
-  max-height: 600px; /* Adjust as needed */
   overflow: scroll; 
   border: 1px solid #ccc; /* Optional, for better visibility */
   margin: auto;
+  margin-bottom: 5vh;
+  max-height: 650px; /* Adjust as needed */
 }
 
  .img-magnifier-container {
   transition: opacity 0.5s;
-  width:150%;
-  height:150%;
+  width:100%;
+  height:100%;
   position:relative;
   margin:auto;
   display:flex;
@@ -628,7 +653,7 @@ header{
 
 .map-marker h4{
   color: white;
-  font-size: 1vw;
+  font-size: 1rem;
   font-weight:100;
   line-height: 1rem;
   position: absolute;
@@ -636,7 +661,6 @@ header{
   text-align: center;
   text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
   pointer-events: none; 
-  display:none;
 }
 
 .large h4{
@@ -671,17 +695,24 @@ header{
 .map-app-container{
   position: relative;
   width: 100%;
+  max-width:1200px;
   margin: auto;
+  margin-bottom: 8vh;
+  display: flex;
+  justify-content: center;
+  max-height: 600px; /* Adjust as needed */
 }
 
   .img-magnifier-container {
     width:250%;
     height:250%;
+
   } 
 
-.map-infocard button{
-  display: none;
-}
+ .map-infocard button{
+  padding-left: 2rem;
+  padding-right: 2rem;
+} 
 
 
 @media screen and (max-width: 700px) {
@@ -793,18 +824,10 @@ header{
   }
 
   .map-infocard{
-
-  z-index: 10;
-  display: flex;
-  position: absolute;
-  top:-2vh;
-  line-height: 1.5rem;
-  width: 96%;
-  min-width: 320px;
-  min-height: 12vh;
-  flex-direction:column;
-  pointer-events: all;
-  padding: 1rem;
+      margin: auto;
+    width: 96%;
+    min-width: 25px;
+ 
 }
 
 .map-infocard button{
@@ -812,10 +835,21 @@ header{
 }
 
 .map-container {
-  max-width: 95%; /* Adjust as needed */
-  max-height: 580px; /* Adjust as needed */
+  max-width: 93%; /* Adjust as needed */
+  max-height: 60vh; /* Adjust as needed */
   border: 1px solid #ccc; /* Optional, for better visibility */
   margin: auto;
+  min-height: 60vh;
+}
+
+#imgContainer{
+  position: relative;
+  outline: 1px red dashed;
+}
+
+.map-app-container{
+  flex-direction: column;
+
 }
 
 }

@@ -18,7 +18,11 @@
 html{
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
 
+.no-scroll {
+  overflow-y: hidden;
+  margin-right: 17px; /* Adjust this value based on your scrollbar width */
 }
 
 a {
@@ -34,7 +38,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  overflow-x: hidden;
+
+  
 }
 
 h1 {
