@@ -623,9 +623,10 @@ document.getElementById('zoom-out').addEventListener('click', () => {
 
        </div>
 
-       <div className="section-header" ><h1>WORLD MAP</h1></div>
+       <div className="section-header" ><h1>WORLD MAP</h1>
+        <h4>Click on a node for information.</h4></div>
 
-       
+  
 
        <div className="map-app-container" id="worldmap">
 

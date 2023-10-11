@@ -12,7 +12,8 @@
   --clr-purple-outline: rgb(255, 104, 255);
   --clr-card-outline: rgb(0, 104, 64);
   --card-bg-gradient: linear-gradient(rgba(9, 32, 77, 0.7), rgba(37, 5, 58, 0.781)), url("assets/cyber-tex-1.png");
-  --speech-bg-gradient: linear-gradient(rgba(9, 32, 77, 0.7), rgba(37, 5, 58, 0.781));
+  --card-img-bg: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.781)), url("assets/grid-tex-large.png");
+  --speech-bg-gradient: linear-gradient(rgba(9, 32, 77, 0.7), rgba(5, 9, 58, 0.781));
   --border_radius: 8px;
 }
 
@@ -326,6 +327,7 @@ header{
   padding-top:0px;
   font-size: 2.5rem;
   scroll-margin-top: 12rem;
+  margin-bottom: 0px;
 }
 
 .enemy-grid{
@@ -697,7 +699,7 @@ header{
   width: 100%;
   max-width:1200px;
   margin: auto;
-  margin-bottom: 8vh;
+  margin-bottom: 5vh;
   margin-top: 4vh;
   display: flex;
   justify-content: center;
@@ -736,6 +738,7 @@ header{
     display:block;
     flex-direction: column;
     margin-bottom: 20vh; 
+    margin-top: 18vh;
   }
 
   .wizzy-hero{
@@ -981,4 +984,16 @@ header{
 
 }
 
+.enemy-image{
+
+  background: var(--card-img-bg);
+  background-repeat: repeat;
+  background-position: center;
+
+}
+
+.section-header h4{
+  text-align: center;
+  line-height: 0.5rem;
+}
 

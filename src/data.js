@@ -32,7 +32,16 @@ import laserbot from './assets/laserbot.png'
 
 import turret from './assets/turret.png'
 import smart_turret from './assets/smart_turret.png'
+import hyperbot from './assets/hyperbot.png'
+import krysallix_enemy from './assets/krysallix.png'
 
+import sentinel from './assets/sentinel.png'
+import spiroworm from './assets/spiroworm.png'
+import orbitron from './assets/orbitron.png'
+import buboid from './assets/buboid.png'
+
+import blokorite from './assets/blokorite.png'
+import teknobyte from './assets/teknobyte.png'
 
 // GUITARS
 
@@ -157,7 +166,7 @@ export const markersData = [
     size: '',
     image: warpgateYellow,
     leveldifficulty: 'N/A',
-    leveldesc: 'This warpgate leads to the eastern edge of CYBER ZONE where you will find the <a href="#explodo">ELECTRO GUITAR.</a>',
+    leveldesc: 'This warpgate leads to the eastern edge of CYBER ZONE where you will find the <a href="#explodo" class="infocard-link">ELECTRO GUITAR.</a>',
     additionalData: '...',  
   },
 
@@ -367,7 +376,7 @@ export const markersData = [
     size: 'large',
     image: noise,
     leveldifficulty: 'N/A',
-    leveldesc: `This gate will activate once you have collected the 5 CRYPTOGEMS. Use it to transport to the final zone and beat the game!`,
+    leveldesc: `This gate will activate once you have collected the 5 <a href="#cryptogem" class="infocard-link">CRYPTOGEMS</a>. Use it to transport to the final zone and beat the game!`,
     additionalData: '...',
   }, 
 
@@ -393,7 +402,7 @@ export const markersData = [
     size: '',
     image: blokopolis1,
     leveldifficulty: 'MED',
-    leveldesc: `On the outskirts of Blokopolis, this level introduces a bunch of new enemies including ORBITRONS, SENTINELS, and <a href="#turret" class="infocard-link">TURRETS</a>.`,
+    leveldesc: `On the outskirts of Blokopolis, this level introduces a bunch of new enemies including <a href="#orbitron" class="infocard-link">ORBITRONS</a>, <a href="#sentinel" class="infocard-link">SENTINELS</a>, and <a href="#turret" class="infocard-link">TURRETS</a>.`,
     additionalData: '...',
   },
 
@@ -429,7 +438,7 @@ export const markersData = [
     size: '',
     image: blokopolis3,
     leveldifficulty: 'HARD',
-    leveldesc: `Watch out for SENTINELS guarding various parts of this level, sometimes it's smarter to just sneak by them. You will also encounter the dreaded <a href="#quantoid" class="infocard-link">QUANTOID</a> enemies at the end.`,
+    leveldesc: `Watch out for <a href="#sentinel" class="infocard-link">SENTINELS</a> guarding various parts of this level, sometimes it's smarter to just sneak by them. You will also encounter the dreaded <a href="#quantoid" class="infocard-link">QUANTOID</a> enemies at the end.`,
     additionalData: '...',
   },
 
@@ -477,7 +486,7 @@ export const markersData = [
     size: 'large',
     image: nucleus,
     leveldifficulty: 'BOSS',
-    leveldesc: `This boss is protected by a ring of ORBITRONS which spray extreme amounts of bullets. PRO TIP: Try letting the bullets come at you and then wrap through the screen to safety. `,
+    leveldesc: `This boss is protected by a ring of <a href="#orbitron" class="infocard-link">ORBITRONS</a> which spray extreme amounts of bullets. PRO TIP: Try letting the bullets come at you and then wrap through the screen to safety. `,
     additionalData: '...',
   },
 
@@ -525,7 +534,7 @@ export const markersData = [
     size: '',
     image: meteorvoid,
     leveldifficulty: 'MEDIUM',
-    leveldesc: `There are gnarly BLOKORITE showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
+    leveldesc: `There are gnarly <a href="#blokorite" class="infocard-link">BLOKORITE</a> showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
     additionalData: '...',
   },
 
@@ -600,7 +609,7 @@ export const markersData = [
     size: '',
     image: meteorvoid,
     leveldifficulty: 'MED',
-    leveldesc: `There are gnarly BLOKORITE showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
+    leveldesc: `There are gnarly <a href="#blokorite" class="infocard-link">BLOKORITE</a> showers in this void. Sometimes it's best to just avoid 'em because they break into fragments when destroyed.`,
     additionalData: '...',
   },
 
@@ -612,7 +621,7 @@ export const markersData = [
     size: 'large',
     image: buboidCavern,
     leveldifficulty: 'HARD',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `A large vertically scrolling level packed with <a href="#buboid" class="infocard-link">BUBOIDS</a>. It's best to surf through the middle and stay away from the top and bottom edges.`,
     additionalData: '...',
   },
 
@@ -624,7 +633,7 @@ export const markersData = [
     size: '',
     image: warpgatePurple,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to the south west side of NEBULAR ZONE which is infested with VIROVORES. Here you can find the powerful DEMON MASK as well as one of the CRYPTOGEMS guarded by MEGAWORM.`,
+    leveldesc: `This warpgate leads to the south west side of NEBULAR ZONE which is infested with <a href="#virovore" class="infocard-link">VIROVORES</a>. Here you can find the powerful <a href="#mask_demon" class="infocard-link">DEMON MASK</a> as well as one of the <a href="#cryptogem" class="infocard-link">CRYPTOGEMS</a> guarded by MEGAWORM.`,
     additionalData: '...',
   },
   
@@ -637,8 +646,8 @@ export const markersData = [
     top: '50%',
     size: '',
     image: krystalZone1,
-    leveldifficulty: 'MED',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldifficulty: 'EASY',
+    leveldesc: `The outer limits of Krystal Zone where you will encounter <a href="#buboid" class="infocard-link">BUBOIDS</a>. This area is generally easier to beat than the other islands.`,
     additionalData: '...',
   },
 
@@ -650,7 +659,7 @@ export const markersData = [
     size: '',
     image: krystalZone2,
     leveldifficulty: 'MED',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `There are many <a href="#giant_spikeball" class="infocard-link">GIANT SPIKEBALLS</a> here and obstacles to avoid. You'll want to get comfortable with wrapping through the screen for this one.`,
     additionalData: '...',
   },
 
@@ -662,7 +671,7 @@ export const markersData = [
     size: '',
     image: krystalZone3,
     leveldifficulty: 'MED',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `Here you will encounter some <a href="#virovore" class="infocard-link">VIROVORES</a>, possibly the most annoying enemies in the game. There is a secret <a href="#double_guitar" class="infocard-link">DOUBLE GUITAR</a> hidden shortly after the first checkpoint. `,
     additionalData: '...',
   },
 
@@ -674,19 +683,19 @@ export const markersData = [
     size: 'large',
     image: krystoplex,
     leveldifficulty: 'HARD',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `The final level of Krystal Zone before facing the boss. Here you will encounter <a href="#krysallix-enemy" class="infocard-link">KRYSALLIXES</a> and <a href="#spiroworm" class="infocard-link">SPIROWORMS</a>. This one is hectic and fast-paced with lots of screen wrapping. `,
     additionalData: '...',
   },
 
   {
     id: 'krysallix',
-    name: 'KRYSALLIX',
+    name: 'MEGA KRYSALLIX',
     left: '67.5%',
     top: '66%',
     size: 'large',
     image: krysallix,
     leveldifficulty: 'BOSS',
-    leveldesc: `Here's a witty description of this level.`,
+    leveldesc: `This boss can activate a forcefield to block your bullets, but is still a relatively easy one to beat. Once defeated, you will aqcuire a <a href="#cryptogem" class="infocard-link">CRYPTOGEM</a>.`,
     additionalData: '...',
   },
 
@@ -710,7 +719,7 @@ export const markersData = [
     size: '',
     image: warpgateGreenNebular,
     leveldifficulty: 'N/A',
-    leveldesc: `This warpgate leads to west side of NEBULAR ZONE which is infested with VIROVORES. Here you can find the powerful DEMON MASK as well as one of the CRYPTOGEMS guarded by MEGAWORM`,
+    leveldesc: `This warpgate leads to west side of NEBULAR ZONE which is infested with <a href="#virovore" class="infocard-link">VIROVORES</a>. Here you can find the powerful <a href="#mask_demon" class="infocard-link">DEMON MASK</a> as well as one of the <a href="#cryptogem" class="infocard-link">CRYPTOGEMS</a> guarded by MEGAWORM`,
     additionalData: '...',
   },
 
@@ -780,6 +789,25 @@ desc: "They link with other Laserbots to form laser barriers."},
 desc: "This standard block-mounted turret fires fast moving bullets at a fixed rate."},
   { id: "smart_turret", image: smart_turret, name: "SMART TURRET", hp: "3", pts: "8", dngr: "MED",
 desc: "This turret tracks you and attempts to anticipate your position - it’s called smart for a reason."},
+{ id: "hyperbot", image: hyperbot, name: "HYPERBOT", hp: "2", pts: "16", dngr: "HI",
+desc: "These things teleport and fire lots of fast moving bullets."},
+  { id: "krysallix-enemy", image: krysallix_enemy, name: "KRYSALLIX", hp: "4", pts: "32", dngr: "HI",
+desc: "It can generate a forcefield which absorbs incoming bullets."},
+
+{ id: "sentinel", image: sentinel, name: "SENTINEL", hp: "3", pts: "16", dngr: "HI",
+desc: "Just like the Sentry, this guy mimics your firing patterns. Sometimes it’s best to just sneak by quietly."},
+  { id: "spiroworm", image: spiroworm, name: "SPIROWORM", hp: "2", pts: "16", dngr: "MED",
+desc: "Named after the spiral patterns it makes as it moves. It fires bullets and charges at you if you get too close."},
+{ id: "orbitron", image: orbitron, name: "ORBITRON", hp: "1", pts: "6", dngr: "MED",
+desc: "These little guys can be real pests. Their movements and firing patterns are erratic and unpredicatable."},
+  { id: "buboid", image: buboid, name: "BUBOID", hp: "1", pts: "2", dngr: "LOW",
+desc: "They just float around. Be careful when destroying them though, because larger Buboids will divide into smaller ones when destroyed."},
+
+{ id: "blokorite", image: blokorite, name: "BLOKORITE", hp: "1", pts: "3", dngr: "MED",
+desc: "You’ll encounter these when surfing through the Void. Large Blokorites will shatter into smaller ones when destroyed."},
+  { id: "teknobyte", image: teknobyte, name: "TEKNOBYTE", hp: "3", pts: "12", dngr: "HI",
+desc: "Heavily armoured bots that come at you quickly. It’s usually best to get out of their way."},
+
 
 ];
 
