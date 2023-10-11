@@ -451,7 +451,7 @@ document.getElementById('zoom-out').addEventListener('click', () => {
         </div>
             
         <nav className="top-nav" id="top-nav">
-                <div> <a onClick={showMessage} href="#enemies" >ENEMIES</a> </div>
+                <div> <a href="#enemies" >ENEMIES</a> </div>
                 <div> <a href="#guitars" >GUITARS</a> </div>
                 <div> <a href="#masks" >MASKS</a> </div>
                 <div> <a href="#items" >ITEMS</a> </div>
@@ -477,7 +477,7 @@ document.getElementById('zoom-out').addEventListener('click', () => {
       
         <div className="hero-text-container" >
           <h2> Welcome to the <span className="hero-accent">Nebular Codex!</span> Here you can study all of the secrets of Nebular Crush and level up from noob-ular to nebular!</h2> 
-          <button onClick={ () => window.location.href = "http://www.nebularcrush.com"}> What the heck is<br/>Nebular Crush? </button>
+          <button onClick={ () => window.location.href = "https://store.steampowered.com/app/1706550/Nebular_Crush/"}> What the heck is<br/>Nebular Crush? </button>
         
         </div>
         <div className="hero-image-container"> <img className="wizzy-hero" id="wizzy-hero" src={wizzy}></img> </div>
@@ -661,12 +661,19 @@ document.getElementById('zoom-out').addEventListener('click', () => {
        <div className="infocard-container">
         <div className="map-infocard" id="map-infocard">
             <h2 className="infocard-name" id="infocard-name">SHREDONIA</h2>
-            <img  src={screenshot} className="infocard-image" id="infocard-image"/>
-            <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
-            <div className="infocard-description" ><p id="infocard-description"> Description goes here. </p></div>
-            <button id="infocard-OK"> OK </button>
-          </div>
-          <div className ="infocard-darken-overlay" id="infocard-darken-overlay"></div>
+            <div className="infocard-content-arrange">
+              <div>
+                <img  src={screenshot} className="infocard-image" id="infocard-image"/>
+              </div>
+                <div className="infocard-text-content">
+                  <div className="difficulty"><p id="infocard-difficulty"> Difficulty: <span className="hard" >HARD</span></p></div>
+                  <div className="infocard-description" ><p id="infocard-description"> Description goes here. </p></div>
+                  <button id="infocard-OK"> OK </button>
+                </div>
+            </div>
+            
+        </div>
+        <div className ="infocard-darken-overlay" id="infocard-darken-overlay"></div>
         </div> 
        
     </>
