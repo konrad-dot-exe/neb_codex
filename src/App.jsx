@@ -45,13 +45,7 @@ let hamburgerOpen = false;
     } 
 
   let hideInfoCard; // Declare hideInfoCard in the outer scope
-  let showMessage;
-
-  showMessage = function(){
-    console.log("it worked!");
-  } 
-
-
+  
 useEffect(() => {
 
   const mapContainer = document.getElementById('map-container');
