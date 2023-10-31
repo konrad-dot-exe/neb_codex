@@ -103,6 +103,7 @@ header{
 
 .wizzy-hero{
   width: 100%; 
+  animation: float 3s infinite ease-in-out;
 }
 
 .hero-image-container{
@@ -902,6 +903,7 @@ header{
       width: 50%;
       min-width: 200px;
       margin:auto;  
+      
     }
 
 
@@ -997,3 +999,18 @@ header{
   line-height: 0.5rem;
 }
 
+@keyframes float{
+
+ 0% {
+    transform: translateY(0.5vh);
+
+  }
+  50% {
+    transform: translateY(-0.5vh);
+  }
+  100% {
+    transform: translateY(0.5vh);
+
+  }
+
+}

@@ -350,7 +350,7 @@ export const markersData = [
     size: '',
     image: guitarRed,
     leveldifficulty: 'N/A',
-    leveldesc: `This shrine unlocks the <a href="#guitar_rapid" class="infocard-link">RAPID GUITAR</a>.`,
+    leveldesc: `This shrine unlocks the <a href="#rapid" class="infocard-link">RAPID GUITAR</a>.`,
     additionalData: '...',
   },
 
